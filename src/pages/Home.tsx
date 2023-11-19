@@ -1,6 +1,6 @@
-import { Placeholder } from "react-bootstrap";
 import LatestCard from "../components/LatestCard";
 import NewsCard from "../components/NewsCard";
+import Placeholder from "../components/Placeholder";
 
 
 function Home() {

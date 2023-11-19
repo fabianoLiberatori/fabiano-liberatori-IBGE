@@ -1,8 +1,20 @@
 import styles from './Header.module.css';
+import logo from '../images/rectangleTrybe.png';
+import nav from '../images/Nav.svg';
 
 function Header() {
   return (
-    <h1 className={ styles.hcontainer }>Header</h1>
+    <section className={ styles.hcontainer }>
+        <img
+      src={logo}
+      alt='logo da Trybe'
+      className={styles.logo}
+      />
+      <h1 className={styles.h1}>
+      Header
+      </h1>
+    </section>
+    
   )
 }
 

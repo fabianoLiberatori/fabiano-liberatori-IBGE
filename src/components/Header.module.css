@@ -1,9 +1,25 @@
 .hcontainer {
-margin-top: 0;
-margin-left: 0;
-margin-left: 0;
-border: solid red 2px;
-background: rgba(14, 14, 14, 0.85);
-color: rgba(255, 255, 255, 1);
-max-height: 220px;
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  height: 80px;
+}
+
+.h1 {
+  display: flex;
+  background: rgba(14, 14, 14, 0.85);
+  color: rgba(255, 255, 255, 1);
+  height: 211vwh;
+  width: 1920px;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.logo {
+  width: 256vwh;
+  height: 80px;
+  flex-shrink: 0;
+  justify-content: start;
 }

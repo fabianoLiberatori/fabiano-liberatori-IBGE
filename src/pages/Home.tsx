@@ -12,7 +12,7 @@ function Home() {
 useEffect(() => {
    async function testete() {
     const data = await NewsApi();
-    const extImg = data.items[3].imagens;
+    const extImg = data.items[0].imagens;
     const strImg = JSON.parse(extImg);
     // const splitImg1 = JSON.parse(strImg)
     // const splitImg2 = splitImg1.split('}').join('').split('\\').join('')
@@ -27,9 +27,9 @@ console.log(teste);
   
   return (
     <section>
+      <img src={`https://agenciadenoticias.ibge.gov.br/${teste?.image_fulltext}`} alt="" />
       <h1>Home</h1>
       <LatestCard />
-      <img src={`https://agenciadenoticias.ibge.gov.br/${teste.image_fulltext}`} alt="" />
       <Placeholder />
       <NewsCard />
     </section>

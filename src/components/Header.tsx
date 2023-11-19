@@ -1,6 +1,8 @@
+import styles from './Header.module.css';
+
 function Header() {
   return (
-    <h1>Header</h1>
+    <h1 className={ styles.hcontainer }>Header</h1>
   )
 }
 

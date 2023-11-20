@@ -2,22 +2,21 @@
 import { useEffect, useState } from "react";
 import NewsContext from "./NewsContext";
 import NewsApi from "../services/Apifetch";
+import { NewsContextType } from "../types";
 
 type ChildrenType = {
   children: React.ReactNode,
 }
 
-function NewsProvider({ Children }: ChildrenType) {
-  const [newsIBGE, setNewsIBGE] = useState();
+function NewsProvider({ children }: ChildrenType) {
+  const [newsIBGE, setNewsIBGE] = useState<NewsContextType[]>([]);
 
   useEffect(() => {
     async function newsFetch() {
-      if(newsIBGE.lenght !== 0) {
-        setNewsIBGE(newsIBGE);
-
-      }else{
+      if(newsIBGE.length === 0) {
         const data = await NewsApi();
         setNewsIBGE(data.items)
+
       }
     }
     console.log('loop');
@@ -25,6 +24,7 @@ function NewsProvider({ Children }: ChildrenType) {
   }, [newsIBGE])
 
   const values ={
+    newsIBGE,
 
   }
   return (

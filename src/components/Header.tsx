@@ -1,6 +1,5 @@
 import styles from './Header.module.css';
 import logo from '../images/rectangleTrybe.png';
-import nav from '../images/Nav.svg';
 
 function Header() {
   return (

@@ -1,6 +1,14 @@
 function Placeholder() {
   return (
-    <section>PlaceHolder</section>
+    <section>
+      <div>
+        <span>Mais recentes</span>
+        <span>Release</span>
+        <span>Notícia</span>
+        <span>Favoritas</span>
+      </div>
+        <span>layout</span>
+    </section>
   )
 }
 

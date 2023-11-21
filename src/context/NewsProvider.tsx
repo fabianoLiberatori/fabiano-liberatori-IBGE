@@ -23,12 +23,11 @@ function NewsProvider({ children }: ChildrenType) {
           introducao: data.items[0].introducao,
           link: data.items[0].link,
           titulo: data.items[0].titulo,
-
         });
         const extImg = data.items[0].imagens;
         const strImg = JSON.parse(extImg);
         setImgLatest(strImg);
-        const olderNews = data.items.filter((news, index) => news[index] !== 0);
+        const olderNews = data.items.filter((news) => news.id !== data.items[0].id);
         setNewsIBGE(olderNews);
       }
     }

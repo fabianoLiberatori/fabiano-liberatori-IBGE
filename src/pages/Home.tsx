@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useContext } from "react";
 import LatestCard from "../components/LatestCard";
 import NewsCard from "../components/NewsCard";
 import Placeholder from "../components/Placeholder";
@@ -7,8 +7,6 @@ import NewsContext from "../context/NewsContext";
 
 function Home() {
   const { newsIBGE } = useContext(NewsContext);
-  const [newLatest, setNewLatest] = useState();
-
 
 useEffect(() => {
  console.log('loop home');

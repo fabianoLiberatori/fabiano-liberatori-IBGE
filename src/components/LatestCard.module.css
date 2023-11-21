@@ -37,6 +37,12 @@
   /* border: solid red 5px; */
   width: 520px;
   color: red;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 210%; /* 29.4px */
+  letter-spacing: 0.28px;
 }
 
 .divtext {
@@ -45,8 +51,8 @@
   justify-content:space-between;
   align-items: center;
   margin-left: 1%;
-  font-style:italic;
   /* border: solid red 5px; */
+  flex-shrink: 0;
 }
 
 .divbottom {

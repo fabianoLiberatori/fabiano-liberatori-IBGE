@@ -25,6 +25,7 @@
   top: 405px;
   left: 1025px;
   border-radius: 5px;
+  /* border: solid red 5px; */
 }
 
 .divtop {
@@ -33,6 +34,9 @@
   align-items: center;
   margin-left: 1%;
   margin-top: 0;
+  /* border: solid red 5px; */
+  width: 520px;
+  color: red;
 }
 
 .divtext {
@@ -41,6 +45,8 @@
   justify-content:space-between;
   align-items: center;
   margin-left: 1%;
+  font-style:italic;
+  /* border: solid red 5px; */
 }
 
 .divbottom {
@@ -49,4 +55,5 @@
   align-items: center;
   margin-left: 1%;
   margin-bottom: 0;
+  width: 520px;
 }

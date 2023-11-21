@@ -6,13 +6,15 @@ import NewsContext from "../context/NewsContext";
 
 
 function Home() {
-  const { newsIBGE } = useContext(NewsContext);
+  const { newsIBGE, dataRelease } = useContext(NewsContext);
+  // console.log(newsIBGE[0]);
+  // console.log(dataRelease[0]);
 
 useEffect(() => {
  console.log('loop home');
 }, [newsIBGE]);
 
-console.log(newsIBGE);
+// console.log(newsIBGE);
 
 
   
@@ -21,7 +23,18 @@ console.log(newsIBGE);
       <LatestCard />
       {/* <img src={`https://agenciadenoticias.ibge.gov.br/${teste?.image_fulltext}`} alt="" /> */}
       <Placeholder />
-      <NewsCard />
+    {newsIBGE.map((news) => (
+        <article key={news.id}>
+           <NewsCard
+        id={news.id}
+        titulo={news.titulo}
+        introducao={news.introducao}
+        data_publicacao= {news.data_publicacao }
+        link={news.link}
+        />
+        </article>
+      ))}
+      {/* <NewsCard /> */}
     </section>
     
   )

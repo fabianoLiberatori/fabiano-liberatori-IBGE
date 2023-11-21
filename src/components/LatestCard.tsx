@@ -5,7 +5,9 @@ import styles from './LatestCard.module.css';
 function LatestCard() {
   const { newLatest, imgLatest } = useContext(NewsContext);
   const { data_publicacao, titulo, introducao } = newLatest;
-  console.log(data_publicacao);
+  
+  
+  
 
 
   return (

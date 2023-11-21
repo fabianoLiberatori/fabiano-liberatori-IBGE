@@ -9,15 +9,18 @@ type ChildrenType = {
 }
 
 function NewsProvider({ children }: ChildrenType) {
-  const [newsIBGE, setNewsIBGE] = useState([]);
-  const [newLatest, setnewLatest] = useState([]);
+  const [dataIBGE, setDataIBGE] = useState([]);
+  const [newLatest, setNewLatest] = useState([]);
   const [imgLatest, setImgLatest] = useState([]);
+  const [newsIBGE, setNewsIBGE] = useState([]);
+  const [dataRelease, setDataRelease] = useState([]);
 
   useEffect(() => {
     async function newsFetch() {
       if(newsIBGE.length === 0) {
         const data = await NewsApi();
-        setnewLatest({
+        setDataIBGE(data.items);
+        setNewLatest({
           data_publicacao: data.items[0].data_publicacao,
           id: data.items[0].id,
           introducao: data.items[0].introducao,
@@ -27,18 +30,23 @@ function NewsProvider({ children }: ChildrenType) {
         const extImg = data.items[0].imagens;
         const strImg = JSON.parse(extImg);
         setImgLatest(strImg);
-        const olderNews = data.items.filter((news) => news.id !== data.items[0].id);
+        const olderNews = data.items.filter((news) => news.id !== data.items[0].id && news.tipo === 'Notícia');
         setNewsIBGE(olderNews);
+        
+        const releaseNews = data.items.filter((news) => news.id !== data.items[0].id && news.tipo === 'Release');
+        setDataRelease(releaseNews);
       }
     }
     console.log('loop');
   newsFetch();
-  }, [newsIBGE])
+  }, [])
 
   const values ={
-    newsIBGE,
+    dataIBGE,
     newLatest,
     imgLatest,
+    newsIBGE,
+    dataRelease,
   }
   return (
     <NewsContext.Provider value={ values }>

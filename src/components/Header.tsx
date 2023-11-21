@@ -10,7 +10,7 @@ function Header() {
       className={styles.logo}
       />
       <h1 className={styles.h1}>
-      Header
+      IBGE News
       </h1>
     </section>
     

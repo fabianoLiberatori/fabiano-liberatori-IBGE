@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  border: solid blue 5px;
+  /* border: solid blue 5px; */
   width: 90vw;
   margin-right: 5%;
   margin-left: 5%;

@@ -17,24 +17,22 @@ function NewsProvider({ children }: ChildrenType) {
 
   useEffect(() => {
     async function newsFetch() {
-      if(newsIBGE.length === 0) {
+      if(dataIBGE.length === 0) {
         const data = await NewsApi();
         setDataIBGE(data.items);
-        setNewLatest({
-          data_publicacao: data.items[0].data_publicacao,
-          id: data.items[0].id,
-          introducao: data.items[0].introducao,
-          link: data.items[0].link,
-          titulo: data.items[0].titulo,
-        });
-        const extImg = data.items[0].imagens;
+
+        const newsFilter = data.items.filter((news) => news.tipo === 'Notícia');
+
+        setNewLatest(newsFilter[0]);
+        const extImg = newsFilter[0].imagens;
         const strImg = JSON.parse(extImg);
         setImgLatest(strImg);
-        const olderNews = data.items.filter((news) => news.id !== data.items[0].id && news.tipo === 'Notícia');
+
+        const olderNews = newsFilter.filter((news) => news.id !== newsFilter[0].id);
         setNewsIBGE(olderNews);
-        
-        const releaseNews = data.items.filter((news) => news.id !== data.items[0].id && news.tipo === 'Release');
-        setDataRelease(releaseNews);
+
+        const releaseFilter = data.items.filter((news) => news.tipo === 'Release');
+        setDataRelease(releaseFilter);
       }
     }
     console.log('loop');

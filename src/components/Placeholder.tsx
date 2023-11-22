@@ -1,13 +1,20 @@
+import styles from './Placeholder.module.css';
+import group from '../images/Group273.svg';
+
 function Placeholder() {
   return (
-    <section>
-      <div>
-        <span>Mais recentes</span>
-        <span>Release</span>
-        <span>Notícia</span>
-        <span>Favoritas</span>
+    <section className={ styles.placcontainer }>
+      <div className={ styles.navlinks }>
+        <span className={ styles.navlinks }>Mais recentes</span>
+        <span className={ styles.navlinks }>Release</span>
+        <span className={ styles.navlinks }>Notícia</span>
+        <span className={ styles.navlinks }>Favoritas</span>
       </div>
-        <span>layout</span>
+        <img
+        src={ group }
+        alt='agrupamento'
+        className={ styles.navgroup }
+        />
     </section>
   )
 }

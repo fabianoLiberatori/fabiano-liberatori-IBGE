@@ -1,0 +1,31 @@
+.placcontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90vw;
+  margin-right: 5%;
+  margin-left: 5%;
+  height: 67px;
+  top: 978px;
+  left: 199px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  flex-shrink: 0;
+}
+
+.navlinks {
+  display: inline;
+  background: rgba(255, 255, 255, 0.85);
+  margin-left: 2%;
+  margin-right: 4%;
+  width: 30vw;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.navgroup {
+  margin-right: 2%;
+}

@@ -12,6 +12,7 @@ function NewsProvider({ children }: ChildrenType) {
   const [dataIBGE, setDataIBGE] = useState([]);
   const [newLatest, setNewLatest] = useState([]);
   const [imgLatest, setImgLatest] = useState([]);
+  const [dataLatest, setDataLatest] = useState([]);
   const [newsIBGE, setNewsIBGE] = useState([]);
   const [dataRelease, setDataRelease] = useState([]);
 
@@ -27,6 +28,8 @@ function NewsProvider({ children }: ChildrenType) {
         const extImg = newsFilter[0].imagens;
         const strImg = JSON.parse(extImg);
         setImgLatest(strImg);
+        const dataFormat = newsFilter[0].data_publicacao.slice(0, 10).split('/');
+        setDataLatest(dataFormat);
 
         const olderNews = newsFilter.filter((news) => news.id !== newsFilter[0].id);
         setNewsIBGE(olderNews);
@@ -43,6 +46,7 @@ function NewsProvider({ children }: ChildrenType) {
     dataIBGE,
     newLatest,
     imgLatest,
+    dataLatest,
     newsIBGE,
     dataRelease,
   }

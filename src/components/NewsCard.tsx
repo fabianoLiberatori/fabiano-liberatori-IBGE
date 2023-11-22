@@ -24,7 +24,7 @@ function NewsCard(oneNews) {
   
   return (
     <>
-      <div className={ styles.teste }>
+      <div className={ styles.titulo }>
         { titulo }
       </div>
       <div className={ styles.teste }>

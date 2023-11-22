@@ -4,10 +4,7 @@ import styles from './LatestCard.module.css';
 
 function LatestCard() {
   const { newLatest, imgLatest, dataLatest } = useContext(NewsContext);
-  const { data_publicacao, titulo, introducao } = newLatest;
-  console.log(dataLatest);
-  
-  
+  const { titulo, introducao } = newLatest;
 
   function dataConvert() {
     const data = new Date();
@@ -26,7 +23,6 @@ function LatestCard() {
 
   const diasCorridos = dataConvert();
 
-
   return (
     <section className={ styles.sectcontainer }>
       <img
@@ -40,9 +36,9 @@ function LatestCard() {
         <div className={ styles.divtop }>
            <p>Notícia mais recente</p><input type="checkbox" />
         </div>
-          <h2>{titulo}</h2>
+          <h2>{ titulo }</h2>
           <br />
-        <p>{introducao}</p>
+        <p>{ introducao }</p>
         <br />
         <div className={ styles.divbottom }>
             <p>{ diasCorridos }</p><button>Leia a notícia aqui</button>

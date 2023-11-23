@@ -27,15 +27,19 @@ function NewsCard(oneNews) {
       <div className={ styles.titulo }>
         { titulo }
       </div>
-      <div className={ styles.teste }>
+      <div className={ styles.introducao }>
         { introducao }
       </div>
-      <div className={ styles.teste }>
+      <div className={ styles.divdata}>
         <span className={styles.teste}>{ diasPassados }</span><button>Leia a notícia aqui</button>
       </div>
-      <div className={ styles.checkFavorite }>
-        <input type="checkbox" />
-      </div>
+        <hr />
+        <div className={ styles.checkFavorite }>
+          <input
+        type="checkbox"
+        />
+        </div>
+        
     </>
   )
 }

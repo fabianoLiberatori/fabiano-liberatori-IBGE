@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import NewsContext from "../context/NewsContext";
 import styles from './LatestCard.module.css';
+import HeartBlack from '../images/HeartBlack.svg';
+import HeartRed from '../images/HeartRed.svg';
 
 function LatestCard() {
   const { newLatest, imgLatest, dataLatest } = useContext(NewsContext);
@@ -32,16 +34,16 @@ function LatestCard() {
       />
       <article className={ styles.artcontainer }>
         
-        <div className={ styles.divtext }>
+        <div>
         <div className={ styles.divtop }>
            <p>Notícia mais recente</p><input type="checkbox" />
         </div>
-          <h2>{ titulo }</h2>
+          <h2 className={ styles.titulotext }>{ titulo }</h2>
           <br />
-        <p>{ introducao }</p>
+        <p className={ styles.introducaotext }>{ introducao }</p>
         <br />
         <div className={ styles.divbottom }>
-            <p>{ diasCorridos }</p><button>Leia a notícia aqui</button>
+            <p>{ diasCorridos }</p><span className={ styles.spanlink }>Leia a notícia aqui</span>
           </div>
         </div>
           

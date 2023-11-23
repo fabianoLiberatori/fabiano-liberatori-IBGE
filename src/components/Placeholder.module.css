@@ -2,12 +2,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90vw;
-  margin-right: 5%;
-  margin-left: 5%;
+  width: 1394px;
+  margin-right: 11%;
+  margin-left: 11%;
   height: 67px;
-  top: 978px;
-  left: 199px;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
   flex-shrink: 0;

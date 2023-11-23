@@ -33,7 +33,9 @@ function Home() {
           </article>
         ))}
       </section>
-    <button>MAIS NOTÍCIAS</button>
+    <div className={ styles.divlink }>
+      <span className={ styles.spanlink }>MAIS NOTÍCIAS</span>
+    </div>
     </section>
     
   )

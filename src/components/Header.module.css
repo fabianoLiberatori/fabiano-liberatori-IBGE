@@ -3,23 +3,28 @@
   margin-top: 0;
   margin-bottom: 0;
   margin-left: 0;
-  height: 80px;
+  height: 90px;
+  /* border: solid red 5px; */
 }
 
 .h1 {
   display: flex;
   background: rgba(14, 14, 14, 0.85);
   color: rgba(255, 255, 255, 1);
-  height: 211vwh;
   width: 1920px;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  font-family: Poller One;
+  font-size: 86px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 15px; /* 17.442% */
+  letter-spacing: 1.6px;
 }
 
 .logo {
   width: 256vwh;
-  height: 80px;
+  height: 90px;
   flex-shrink: 0;
   justify-content: start;
 }

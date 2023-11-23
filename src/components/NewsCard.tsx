@@ -31,7 +31,7 @@ function NewsCard(oneNews) {
         { introducao }
       </div>
       <div className={ styles.divdata}>
-        <span className={styles.teste}>{ diasPassados }</span><button>Leia a notícia aqui</button>
+        <span className={ styles.diastext }>{ diasPassados }</span><span className={ styles.spanlink }>Leia a notícia aqui</span>
       </div>
         <hr />
         <div className={ styles.checkFavorite }>

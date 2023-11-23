@@ -1,9 +1,10 @@
 .sectcontainer {
   display: flex;
   /* border: solid red 5px; */
-  justify-content:space-around;
+  justify-content: space-between;
   align-items: center;
-  margin: 6%;
+  width: 1394px;
+  margin: 6% 11%;
 }
 
 .latestimg {
@@ -20,9 +21,8 @@
   justify-content: space-between;
   width: 540px;
   height: 328px;
-  top: 405px;
-  left: 1025px;
   border-radius: 5px;
+  flex-shrink: 0;
   /* border: solid red 5px; */
 }
 
@@ -33,7 +33,7 @@
   margin-left: 1%;
   margin-top: 0;
   /* border: solid red 5px; */
-  width: 520px;
+  width: 540px;
   color: red;
   font-family: Poppins;
   font-size: 14px;
@@ -53,11 +53,52 @@
   flex-shrink: 0;
 }
 
+.titulotext {
+  font-family: IBM Plex Serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  width: 540px;
+  height: 123px;
+  flex-shrink: 0;
+  margin-bottom: 3%;
+  margin-top: 3%;
+  margin-left: 1%;
+}
+
+.introducaotext {
+  font-family: Poppins;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 165%; /* 24.75px */
+  width: 500px;
+  height: 94px;
+  flex-shrink: 0;
+  margin-top: 3%;
+  margin-left: 1%;
+}
+
 .divbottom {
   display: flex;
   justify-content:space-between;
   align-items: center;
   margin-left: 1%;
-  margin-bottom: 0;
-  width: 520px;
+  margin-top: 3%;
+  width: 540px;
+}
+
+.spanlink {
+  display: flex;
+  width: 167px;
+  height: 36px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: rgba(5, 212, 101, 1);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }

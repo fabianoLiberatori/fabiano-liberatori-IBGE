@@ -9,7 +9,17 @@ import styles from './Home.module.css'
 function Home() {
   const { newsIBGE, dataRelease } = useContext(NewsContext);
 
+
   useEffect(() => {
+    if(JSON.parse(localStorage.getItem('favorite')) === null) {
+      localStorage.setItem('favorite', JSON.stringify([{
+        id: '1',
+        titulo: 'titulo_1',
+        introducao: 'introducao_1',
+        data_publicacao: 'data_publicacao_1',
+        link: 'link_1',
+      }]))
+    }
     console.log('loop home');
   }, [newsIBGE]);
 

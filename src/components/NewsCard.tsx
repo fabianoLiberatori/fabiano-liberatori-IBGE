@@ -1,9 +1,20 @@
+import { useEffect, useState } from "react";
 import styles from './NewsCard.module.css'
 import HeartBlack from '../images/HeartBlack.svg';
 import HeartRed from '../images/HeartRed.svg';
+import { func } from "prop-types";
 
 function NewsCard(oneNews) {
   const {id, titulo, introducao, data_publicacao, link} = oneNews;
+  const [isFavorite, setIsFavorite] = useState([]);
+
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem('favorite'));
+    if(favorites !== null) {
+      const favoritesId = favorites.map((ele) => ele.id)
+      setIsFavorite(favoritesId);
+    }
+  }, []);
   
   function dataConvert() {
     const data = new Date();
@@ -22,7 +33,27 @@ function NewsCard(oneNews) {
   }
 
   const diasPassados = dataConvert();
-  
+
+  function setLocalFavorite() {
+    const favorites = JSON.parse(localStorage.getItem('favorite'));
+    const favoritesId = favorites.map((ele) => ele.id);
+    if(favoritesId.includes(id)){
+      const reFavorite = favorites.filter((ele) => ele.id !== id);
+      localStorage.setItem('favorite', JSON.stringify(reFavorite));
+      const favoritesId = reFavorite.map((ele) => ele.id)
+      setIsFavorite(favoritesId);
+    } 
+    if(!favoritesId.includes(id)){
+      localStorage.setItem('favorite', JSON.stringify([...favorites, {
+        id: id,
+        titulo: titulo,
+        introducao: introducao,
+        data_publicacao: data_publicacao,
+        link: link,
+      }]))
+      setIsFavorite([...isFavorite, id]);
+    }
+  }
   
   return (
     <>
@@ -40,12 +71,14 @@ function NewsCard(oneNews) {
           <label className={ styles.heartlabel }>
             <input
               hidden
+              checked={ isFavorite.includes(id) }
+              onChange={ setLocalFavorite }
               id="checkfavorite"
               type="checkbox"
             />
             <img
             className={ styles.heartlabel }
-            src={ HeartBlack }
+            src={ isFavorite.includes(id) ? HeartRed : HeartBlack }
             alt="favoritar" />
           </label> 
         </div>

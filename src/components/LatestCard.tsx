@@ -6,7 +6,16 @@ import HeartRed from '../images/HeartRed.svg';
 
 function LatestCard() {
   const { newLatest, imgLatest, dataLatest } = useContext(NewsContext);
-  const { titulo, introducao } = newLatest;
+  const { id, titulo, introducao, data_publicacao, link } = newLatest;
+  const [isFavorite, setIsFavorite] = useState([]);
+
+  useEffect(() => {
+    const favorites = JSON.parse(localStorage.getItem('favorite'));
+    if(favorites !== null) {
+      const favoritesId = favorites.map((ele) => ele.id)
+      setIsFavorite(favoritesId);
+    }
+  }, []);
 
   function dataConvert() {
     const data = new Date();
@@ -25,6 +34,27 @@ function LatestCard() {
 
   const diasCorridos = dataConvert();
 
+  function setLocalFavorite() {
+    const favorites = JSON.parse(localStorage.getItem('favorite'));
+    const favoritesId = favorites.map((ele) => ele.id);
+    if(favoritesId.includes(id)){
+      const reFavorite = favorites.filter((ele) => ele.id !== id);
+      localStorage.setItem('favorite', JSON.stringify(reFavorite));
+      const favoritesId = reFavorite.map((ele) => ele.id)
+      setIsFavorite(favoritesId);
+    } 
+    if(!favoritesId.includes(id)){
+      localStorage.setItem('favorite', JSON.stringify([...favorites, {
+        id: id,
+        titulo: titulo,
+        introducao: introducao,
+        data_publicacao: data_publicacao,
+        link: link,
+      }]))
+      setIsFavorite([...isFavorite, id]);
+    }
+  }
+
   return (
     <section className={ styles.sectcontainer }>
       <img
@@ -37,11 +67,16 @@ function LatestCard() {
           <div className={ styles.divtop }>
             <p>Notícia mais recente</p>
               <label>
-                <img src={ HeartBlack } alt="Desfavoritado" />
+                <img
+                src={ isFavorite.includes(id) ? HeartRed : HeartBlack }
+                alt="Desfavoritado"
+                />
                 <input
                   hidden
                   id="checkfavorite"
                   type="checkbox"
+                  checked={ isFavorite.includes(id) }
+                  onChange={ setLocalFavorite }
                 />
               </label>  
           </div>

@@ -7,6 +7,10 @@
   flex-shrink: 0;
 }
 
+.heartlabel {
+  background: rgba(255, 255, 255, 1);
+}
+
 .titulo {
   font-family: IBM Plex Serif;
   font-size: 18px;

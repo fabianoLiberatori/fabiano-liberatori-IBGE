@@ -33,17 +33,24 @@ function LatestCard() {
       className={ styles.latestimg }
       />
       <article className={ styles.artcontainer }>
-        
         <div>
-        <div className={ styles.divtop }>
-           <p>Notícia mais recente</p><input type="checkbox" />
-        </div>
+          <div className={ styles.divtop }>
+            <p>Notícia mais recente</p>
+              <label>
+                <img src={ HeartBlack } alt="Desfavoritado" />
+                <input
+                  hidden
+                  id="checkfavorite"
+                  type="checkbox"
+                />
+              </label>  
+          </div>
           <h2 className={ styles.titulotext }>{ titulo }</h2>
           <br />
-        <p className={ styles.introducaotext }>{ introducao }</p>
-        <br />
-        <div className={ styles.divbottom }>
-            <p>{ diasCorridos }</p><span className={ styles.spanlink }>Leia a notícia aqui</span>
+          <p className={ styles.introducaotext }>{ introducao }</p>
+          <br />
+          <div className={ styles.divbottom }>
+              <p>{ diasCorridos }</p><span className={ styles.spanlink }>Leia a notícia aqui</span>
           </div>
         </div>
           

@@ -1,4 +1,6 @@
 import styles from './NewsCard.module.css'
+import HeartBlack from '../images/HeartBlack.svg';
+import HeartRed from '../images/HeartRed.svg';
 
 function NewsCard(oneNews) {
   const {id, titulo, introducao, data_publicacao, link} = oneNews;
@@ -35,9 +37,17 @@ function NewsCard(oneNews) {
       </div>
         <hr />
         <div className={ styles.checkFavorite }>
-          <input
-        type="checkbox"
-        />
+          <label className={ styles.heartlabel }>
+            <input
+              hidden
+              id="checkfavorite"
+              type="checkbox"
+            />
+            <img
+            className={ styles.heartlabel }
+            src={ HeartBlack }
+            alt="favoritar" />
+          </label> 
         </div>
         
     </>

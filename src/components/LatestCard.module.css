@@ -62,9 +62,10 @@
   width: 540px;
   height: 123px;
   flex-shrink: 0;
-  margin-bottom: 3%;
-  margin-top: 3%;
+  /* margin-bottom: 3%; */
+  /* margin-top: 3%; */
   margin-left: 1%;
+  /* border: solid purple 1px; */
 }
 
 .introducaotext {
@@ -76,8 +77,9 @@
   width: 500px;
   height: 94px;
   flex-shrink: 0;
-  margin-top: 3%;
+  /* margin-top: 3%; */
   margin-left: 1%;
+  /* border: solid orange 1px; */
 }
 
 .divbottom {
@@ -85,7 +87,7 @@
   justify-content:space-between;
   align-items: center;
   margin-left: 1%;
-  margin-top: 3%;
+  /* margin-top: 3%; */
   width: 540px;
 }
 

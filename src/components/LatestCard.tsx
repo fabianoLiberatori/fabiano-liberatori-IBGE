@@ -73,7 +73,6 @@ function LatestCard() {
                 />
                 <input
                   hidden
-                  id="checkfavorite"
                   type="checkbox"
                   checked={ isFavorite.includes(id) }
                   onChange={ setLocalFavorite }

@@ -73,7 +73,6 @@ function NewsCard(oneNews) {
               hidden
               checked={ isFavorite.includes(id) }
               onChange={ setLocalFavorite }
-              id="checkfavorite"
               type="checkbox"
             />
             <img

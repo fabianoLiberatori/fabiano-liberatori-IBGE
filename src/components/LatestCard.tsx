@@ -6,7 +6,7 @@ import HeartRed from '../images/HeartRed.svg';
 import { Link } from "react-router-dom";
 
 function LatestCard() {
-  const { newLatest, imgLatest, dataLatest } = useContext(NewsContext);
+  const { newLatest, imgLatest, dataLatest, setAllFavorites } = useContext(NewsContext);
   const { id, titulo, introducao, data_publicacao, link } = newLatest;
   const [isFavorite, setIsFavorite] = useState([]);
 
@@ -35,6 +35,12 @@ function LatestCard() {
 
   const diasCorridos = dataConvert();
 
+  function setContextFavorite(){
+    const favoriteStore = JSON.parse(localStorage.getItem('favorite'));
+    const favoriteFilter = favoriteStore.filter((fav) => fav.id !== favoriteStore[0].id)
+    setAllFavorites(favoriteFilter);
+  }
+
   function setLocalFavorite() {
     const favorites = JSON.parse(localStorage.getItem('favorite'));
     const favoritesId = favorites.map((ele) => ele.id);
@@ -54,6 +60,7 @@ function LatestCard() {
       }]))
       setIsFavorite([...isFavorite, id]);
     }
+    setContextFavorite();
   }
 
   return (

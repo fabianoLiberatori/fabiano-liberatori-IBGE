@@ -16,6 +16,7 @@ function NewsProvider({ children }: ChildrenType) {
   const [newsIBGE, setNewsIBGE] = useState([]);
   const [dataRelease, setDataRelease] = useState([]);
   const [navPlace, setNavPlace] = useState('Mais recentes');
+  const [allFavorites, setAllFavorites] = useState([]);
 
   useEffect(() => {
     async function newsFetch() {
@@ -52,6 +53,8 @@ function NewsProvider({ children }: ChildrenType) {
     dataRelease,
     navPlace,
     setNavPlace,
+    allFavorites,
+    setAllFavorites,
   }
   return (
     <NewsContext.Provider value={ values }>

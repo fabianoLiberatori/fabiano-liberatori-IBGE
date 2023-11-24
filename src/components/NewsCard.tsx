@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import { useEffect, useContext, useState } from "react";
 import styles from './NewsCard.module.css'
 import HeartBlack from '../images/HeartBlack.svg';
 import HeartRed from '../images/HeartRed.svg';
 import { Link } from "react-router-dom";
+import NewsContext from "../context/NewsContext";
 
 function NewsCard(oneNews) {
+  const { setAllFavorites } = useContext(NewsContext);
   const {id, titulo, introducao, data_publicacao, link} = oneNews;
   const [isFavorite, setIsFavorite] = useState([]);
 
@@ -36,6 +38,12 @@ function NewsCard(oneNews) {
 
   const diasPassados = dataConvert();
 
+  function setContextFavorite(){
+    const favoriteStore = JSON.parse(localStorage.getItem('favorite'));
+    const favoriteFilter = favoriteStore.filter((fav) => fav.id !== favoriteStore[0].id)
+    setAllFavorites(favoriteFilter);
+  }
+
   function setLocalFavorite() {
     const favorites = JSON.parse(localStorage.getItem('favorite'));
     const favoritesId = favorites.map((ele) => ele.id);
@@ -55,6 +63,7 @@ function NewsCard(oneNews) {
       }]))
       setIsFavorite([...isFavorite, id]);
     }
+    setContextFavorite();
   }
   
   return (

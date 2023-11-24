@@ -40,7 +40,6 @@ function NewsProvider({ children }: ChildrenType) {
         setDataRelease(releaseFilter);
       }
     }
-    console.log('loop context');
   newsFetch();
   }, [])
 
@@ -52,6 +51,7 @@ function NewsProvider({ children }: ChildrenType) {
     newsIBGE,
     setNewsIBGE,
     dataRelease,
+    setDataRelease,
     navPlace,
     setNavPlace,
     allFavorites,

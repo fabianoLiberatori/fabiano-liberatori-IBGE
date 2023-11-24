@@ -8,7 +8,15 @@ import styles from './Home.module.css'
 
 
 function Home() {
-  const { dataIBGE, newsIBGE, setNewsIBGE, dataRelease, navPlace, setNavPlace, allFavorites } = useContext(NewsContext);
+  const {
+    dataIBGE,
+    newsIBGE,
+    setNewsIBGE,
+    dataRelease,
+    navPlace,
+    setNavPlace,
+    allFavorites,
+    setDataRelease } = useContext(NewsContext);
   const [inputFilter, setInputFilter] = useState('');
 
   useEffect(() => {
@@ -22,17 +30,23 @@ function Home() {
         imagens: 'imagens_0'
       }]))
     }
-    console.log('loop home');
   }, []);
 
   function setFilterByInput(event){
     const { value } = event.target;
     const newsFilter = dataIBGE.filter((news) => news.tipo === 'Notícia');
+    const newsRelease = dataIBGE.filter((news) => news.tipo === 'Release');
     const olderNews = newsFilter.filter((news) => news.id !== newsFilter[0].id);
+
     const textFilter = olderNews.filter((news) => (
       news.titulo.toLocaleLowerCase().includes(value.toLocaleLowerCase())
     ));
+
+    const releaseFilter = newsRelease.filter((news) => (
+      news.titulo.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+    ));
     setNewsIBGE(textFilter);
+    setDataRelease(releaseFilter);
     setInputFilter(value);
   }
 
@@ -45,6 +59,18 @@ function Home() {
 
       {
         navPlace.includes('Notícia')
+        &&
+        <input
+          type="text"
+          value={ inputFilter }
+          onChange={ (event) => setFilterByInput(event) }
+          placeholder='Pesquisar por titulo'
+          className={ styles.inputsearch }
+        />
+      }
+
+      {
+        navPlace.includes('Release')
         &&
         <input
           type="text"

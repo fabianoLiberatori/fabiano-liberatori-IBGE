@@ -30,20 +30,23 @@ function ReleaseCard(oneRelease) {
       src={`https://agenciadenoticias.ibge.gov.br/${strImg.image_fulltext}`} 
       alt="Foto do artigo"
       className={ styles.imgresponse }
-      />
-     <div className={ styles.titulo }>
-        { titulo }
-      </div>
-      <div className={ styles.introducao }>
-        { introducao }
-      </div>
-      <div className={ styles.divdata}>
-        <span className={ styles.diastext }>{ diasPassados }</span>
-        <Link to={ link } className={ styles.spanlink }>
-          <span className={ styles.spanlink }>Leia mais aqui</span>
-        </Link>
-      </div>
-        <hr />
+    />
+
+    <div className={ styles.titulo }>
+      { titulo }
+    </div>
+
+    <div className={ styles.introducao }>
+      { introducao }
+    </div>
+
+    <div className={ styles.divdata}>
+      <span className={ styles.diastext }>{ diasPassados }</span>
+      <Link to={ link } className={ styles.spanlink }>
+         <span className={ styles.spanlink }>Leia mais aqui</span>
+      </Link>
+    </div>
+    <hr />
     </>
   )
   

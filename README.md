@@ -1,27 +1,31 @@
-# React + TypeScript + Vite
+# Desafio React: transforme dados em notícias e acelere a sua carreira!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Olá, este é o teste de Frontend para pessoas desenvolvedoras junior da Trybe. O objetivo é analisar as habilidades das pessoas candidatas, com foco nos fundamentos principais de React e suas bibliotecas relacionadas.
 
-Currently, two official plugins are available:
+Eu, Fabiano Liberatóri, aluno da <a href="https://www.betrybe.com/">Trybe</a>, apresento o que desenvolvi neste desafio. Para isso, repliquei a ideia de um sistema que captura as notícias mais recentes do IBGE e apresentar elas de forma organizada.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## O que utilizei para desenvolver.
 
-## Expanding the ESLint configuration
+- Iniciando o Projeto localmente com o vite com react-ts
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Criei a estrutura de pastas necessarias, como componentes, pages, services, imagens etc...
 
-- Configure the top-level `parserOptions` property like this:
+- Utilizei React-Routers, Context e Provider para fazer somente uma vez a chamada do ENDPOINT do IBGE, com isto deixando a pagina mais responsiva em toda a sua navegação.
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+- Paraa estilização a da pagina, segui boa parte do figma deste desafio, apenas em alguns pontos deixei ao meu gosto, principalmente a parte responsiva para mobile, optei por utilizar module.css para maior precisão de tamanhos e margens.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Desafios durante o desenvolvimento.
+
+Como se tratou de um projeto totalmente vindo do zero e sem ajuda da dos mentores, para justamente ter um desafio real de um Desenvolvedor, tive problemas com conversões de arquivos JSON e alinhamentos de estilização.
+
+Tive poucas vezes momentos em que estava com alguma dificuldade para desenvolver alguma logica para a pagina funcionasse conforme o que ja tinha planejado.
+
+Passei por volta de 30% do tempo para codar, pesquisando em documentações, videos e projetos que desenvolvi anteriormente.
+
+## Linguagens.
+
+- HTML 5
+- CSS 3
+- Vite
+- React
+- JavaScript / TypeScript

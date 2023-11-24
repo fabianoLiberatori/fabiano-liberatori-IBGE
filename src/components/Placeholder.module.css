@@ -11,6 +11,32 @@
   flex-shrink: 0;
 }
 
+.navdiv{
+  display: inline;
+  background: rgba(255, 255, 255, 0.85);
+  margin-left: 2%;
+  margin-right: 4%;
+  width: 30vw;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.navtext {
+  display: inline;
+  background: rgba(255, 255, 255, 0.85);
+  margin-left: 2%;
+  margin-right: 4%;
+  width: 30vw;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-decoration: underline red 4px;
+}
+
 .navlinks {
   display: inline;
   background: rgba(255, 255, 255, 0.85);
@@ -22,6 +48,23 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+}
+
+.navlinks:hover {
+  cursor: pointer;
+  transition: 0.35s;
+  display: inline;
+  background: rgba(255, 255, 255, 1);
+  color: brown;
+  margin-left: 2%;
+  margin-right: 4%;
+  width: 32vw;
+  font-family: Poppins;
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  box-shadow: 5px 10px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navgroup {

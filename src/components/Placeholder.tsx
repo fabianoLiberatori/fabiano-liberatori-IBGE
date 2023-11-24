@@ -1,14 +1,51 @@
+import { useEffect, useContext, useState } from "react";
+import NewsContext from "../context/NewsContext";
 import styles from './Placeholder.module.css';
 import group from '../images/Group273.svg';
 
 function Placeholder() {
+  const { navPlace, setNavPlace } = useContext(NewsContext);
+  console.log(navPlace);
+  
+  function navToggle(navClicked){
+    setNavPlace(navClicked);
+  }
+  
   return (
     <section className={ styles.placcontainer }>
-      <div className={ styles.navlinks }>
-        <span className={ styles.navlinks }>Mais recentes</span>
-        <span className={ styles.navlinks }>Release</span>
-        <span className={ styles.navlinks }>Notícia</span>
-        <span className={ styles.navlinks }>Favoritas</span>
+      <div className={ styles.navdiv }>
+        <span
+        className={navPlace.includes('Mais recentes') ?
+        styles.navtext :
+        styles.navlinks }
+        onClick={ () => navToggle('Mais recentes') }
+        >
+          Mais recentes
+        </span>
+        <span
+        className={navPlace.includes('Release') ?
+        styles.navtext :
+        styles.navlinks }
+        onClick={ () => navToggle('Release') }
+        >
+          Release
+        </span>
+        <span
+         className={navPlace.includes('Notícia') ?
+         styles.navtext :
+         styles.navlinks }
+        onClick={ () => navToggle('Notícia') }
+        >
+          Notícia
+        </span>
+        <span
+         className={navPlace.includes('Favoritas') ?
+         styles.navtext :
+         styles.navlinks }
+        onClick={ () => navToggle('Favoritas') }
+        >
+          Favoritas
+        </span>
       </div>
         <img
         src={ group }

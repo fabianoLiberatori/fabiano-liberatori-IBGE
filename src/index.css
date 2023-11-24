@@ -1,9 +1,10 @@
 * {
+  background: rgba(241, 242, 243, 1);
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background: rgba(241, 242, 243, 1);
-  @media (max-width: 380px) {
+
+  @media ( max-width : 380px ) {
     width: 380px;
   }
 }

@@ -1,12 +1,11 @@
-
-import { useEffect, useState } from "react";
-import NewsContext from "./NewsContext";
-import NewsApi from "../services/Apifetch";
-import { NewsContextType } from "../types";
+import { useEffect, useState } from 'react';
+import NewsContext from './NewsContext';
+import NewsApi from '../services/Apifetch';
+import { NewsContextType } from '../types';
 
 type ChildrenType = {
   children: React.ReactNode,
-}
+};
 
 function NewsProvider({ children }: ChildrenType) {
   const [dataIBGE, setDataIBGE] = useState([]);
@@ -20,7 +19,7 @@ function NewsProvider({ children }: ChildrenType) {
 
   useEffect(() => {
     async function newsFetch() {
-      if(dataIBGE.length === 0) {
+      if (dataIBGE.length === 0) {
         const data = await NewsApi();
         setDataIBGE(data.items);
 
@@ -40,10 +39,10 @@ function NewsProvider({ children }: ChildrenType) {
         setDataRelease(releaseFilter);
       }
     }
-  newsFetch();
-  }, [])
+    newsFetch();
+  }, []);
 
-  const values ={
+  const values = {
     dataIBGE,
     newLatest,
     imgLatest,
@@ -56,12 +55,12 @@ function NewsProvider({ children }: ChildrenType) {
     setNavPlace,
     allFavorites,
     setAllFavorites,
-  }
+  };
   return (
     <NewsContext.Provider value={ values }>
       {children}
     </NewsContext.Provider>
-  )
+  );
 }
 
 export default NewsProvider;

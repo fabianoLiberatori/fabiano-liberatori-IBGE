@@ -1,103 +1,107 @@
 .placcontainer {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  width: 1394px;
-  margin-right: 11%;
-  margin-left: 11%;
-  height: 67px;
-  /* border: solid red 1px; */
-  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.85);
+  display: flex;
   flex-shrink: 0;
-  @media (max-width: 380px) {
-    width: 350px;
-    margin-left: 3%;
-    margin-right: 3%;
+  height: 67px;
+  justify-content: space-between;
+  margin-left: 11%;
+  margin-right: 11%;
+  width: 1394px;
+
+  @media ( max-width : 380px ) {
     height: 50px;
     margin-bottom: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 350px;
   }
 }
 
-.navdiv{
-  display: inline;
+.navdiv {
   background: rgba(255, 255, 255, 0.85);
+  display: inline;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
   margin-left: 2%;
   margin-right: 4%;
   width: 600px;
-  font-family: Poppins;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  /* border: solid purple 1px; */
-  @media (max-width: 380px) {
-    width: 350px;
+
+  @media ( max-width : 380px ) {
     height: 20px;
+    width: 350px;
   }
 }
+
 .navtext {
-  display: inline;
   background: rgba(255, 255, 255, 0.85);
-  margin-left: 2%;
-  margin-right: 4%;
-  width: 30vw;
+  display: inline;
   font-family: Poppins;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  margin-left: 2%;
+  margin-right: 4%;
   text-decoration: underline red 4px;
-  /* border: solid orange 1px; */
-  @media (max-width: 380px) {
-    width: 320px;
-    height: 18px;
+  width: 30vw;
+
+  @media ( max-width : 380px ) {
     font-size: 12px;
+    height: 18px;
     text-decoration: underline red 2px;
+    width: 320px;
   }
 }
 
 .navlinks {
-  display: inline;
   background: rgba(255, 255, 255, 0.85);
-  margin-left: 2%;
-  margin-right: 4%;
-  width: 30vw;
+  display: inline;
   font-family: Poppins;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  @media (max-width: 380px) {
-    width: 320px;
-    height: 44px;
+  margin-left: 2%;
+  margin-right: 4%;
+  width: 30vw;
+
+  @media ( max-width : 380px ) {
     font-size: 12px;
+    height: 44px;
+    width: 320px;
   }
 }
 
 .navlinks:hover {
-  cursor: pointer;
-  transition: 0.35s;
-  display: inline;
   color: brown;
-  margin-left: 2%;
-  margin-right: 4%;
-  width: 32vw;
+  cursor: pointer;
+  display: inline;
   font-family: Poppins;
   font-size: 29px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  @media (max-width: 380px) {
-    width: 320px;
-    height: 44px;
+  margin-left: 2%;
+  margin-right: 4%;
+  transition: 0.35s;
+  width: 32vw;
+
+  @media ( max-width : 380px ) {
     font-size: 12px;
+    height: 44px;
+    width: 320px;
   }
 }
 
 .navgroup {
   margin-right: 2%;
-  @media (max-width: 380px) {
+
+  @media ( max-width : 380px ) {
     width: 28px;
   }
 }

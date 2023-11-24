@@ -1,38 +1,40 @@
 .mainresponse {
-  @media (max-width: 380px) {
+
+  @media ( max-width : 380px ) {
     width: 380px;
   }
 }
 
 .inputsearch {
-  display: flex;
-  margin-top: 1%;
-  margin-left: 11%;
-  width: 350px;
-  height: 35px;
   border-radius: 5px;
+  display: flex;
   font-size: 15px;
-  @media (max-width: 380px) {
-    width: 270px;
+  height: 35px;
+  margin-left: 11%;
+  margin-top: 1%;
+  width: 350px;
+
+  @media ( max-width : 380px ) {
     height: 30px;
+    width: 270px;
   }
 }
 
 .inputsearch:hover {
-  display: flex;
-  margin-top: 1%;
-  margin-left: 12%;
-  width: 410px;
-  height: 45px;
   border-radius: 5px;
   cursor: text;
-  transition: 0.35s;
+  display: flex;
   font-size: 25px;
+  height: 45px;
   margin-left: 11%;
-  @media (max-width: 380px) {
-    width: 320px;
+  margin-top: 1%;
+  transition: 0.35s;
+  width: 410px;
+
+  @media ( max-width : 380px ) {
     height: 30px;
     margin-left: 6%;
+    width: 320px;
   }
 }
 
@@ -40,101 +42,101 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  /* border: solid blue 5px; */
-  width: 1394px;
-  margin-right: 11%;
   margin-left: 11%;
-  @media (max-width: 380px) {
-    width: 360px;
-    margin-right: 3%;
-    margin-left: 2%;
+  margin-right: 11%;
+  width: 1394px;
+
+  @media ( max-width : 380px ) {
     justify-content: center;
+    margin-left: 2%;
+    margin-right: 3%;
+    width: 360px;
   }
 }
 
 .newsCard {
-  padding: 2%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  /* border: solid green 1px; */
-  width: 438px;
-  height: 331px;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  box-shadow: 0px 2px 14px 0px #2A2A2A3D;
   background: rgba(255, 255, 255, 1);
   border-radius: 1%;
-  @media (max-width: 380px) {
-    width: 360px;
+  box-shadow: 0 2px 14px 0 #2a2a2a3d;
+  display: flex;
+  flex-direction: column;
+  height: 331px;
+  justify-content: space-between;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  padding: 2%;
+  width: 438px;
+
+  @media ( max-width : 380px ) {
     height: 600px;
+    width: 360px;
   }
 }
 
 .divlink {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  border: 1px solid #c31815;
   border-radius: 2px;
-  border: 1px solid #C31815;
-  width: 220px;
-  height: 60px;
-  margin-left: 42%;
-  margin-bottom: 2%;
+  display: flex;
   flex-shrink: 0;
-  @media (max-width: 500px) {
-    width: 240px;
+  height: 60px;
+  justify-content: center;
+  margin-bottom: 2%;
+  margin-left: 42%;
+  width: 220px;
+
+  @media ( max-width : 500px ) {
     margin: auto;
     margin-bottom: 3%;
+    width: 240px;
   }
 }
 
 .divlink:hover {
-  display: flex;
-  justify-content: center;
   align-items: center;
-  border-radius: 2px;
   border: 1px solid rgb(47, 56, 137);
-  width: 250px;
-  height: 70px;
-  margin-left: 42%;
-  margin-bottom: 2%;
-  flex-shrink: 0;
+  border-radius: 2px;
   cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  height: 70px;
+  justify-content: center;
+  margin-bottom: 2%;
+  margin-left: 42%;
   transition: 0.35s;
+  width: 250px;
 }
 
-
 .spanlink {
-  color: #C31815;
-  text-align: center;
+  color: #c31815;
   font-family: Poppins;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: 15px; /* 107.143% */
   letter-spacing: 1.6px;
+  line-height: 15px;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .spanlink:hover {
-  color: #C31815;
-  text-align: center;
+  color: #c31815;
+  cursor: pointer;
   font-family: Poppins;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 15px; /* 107.143% */
   letter-spacing: 1.6px;
+  line-height: 15px;
+  text-align: center;
   text-transform: uppercase;
-  cursor: pointer;
   transition: 0.35s;
 }
 
 .nofavorite {
   display: flex;
   justify-content: center;
-  width: 1394px;
-  margin-top: 4%;
   margin-bottom: 4%;
+  margin-top: 4%;
+  width: 1394px;
 }

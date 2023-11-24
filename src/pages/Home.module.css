@@ -77,3 +77,11 @@
   cursor: pointer;
   transition: 0.35s;
 }
+
+.nofavorite {
+  display: flex;
+  justify-content: center;
+  width: 1394px;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}

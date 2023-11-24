@@ -3,6 +3,7 @@ import NewsContext from "../context/NewsContext";
 import styles from './LatestCard.module.css';
 import HeartBlack from '../images/HeartBlack.svg';
 import HeartRed from '../images/HeartRed.svg';
+import { Link } from "react-router-dom";
 
 function LatestCard() {
   const { newLatest, imgLatest, dataLatest } = useContext(NewsContext);
@@ -85,7 +86,10 @@ function LatestCard() {
           <p className={ styles.introducaotext }>{ introducao }</p>
           <br />
           <div className={ styles.divbottom }>
-              <p>{ diasCorridos }</p><span className={ styles.spanlink }>Leia a notícia aqui</span>
+              <p>{ diasCorridos }</p>
+              <Link to={ link } className={ styles.spanlink }>
+                <span className={ styles.spanlink }>Leia a notícia aqui</span>
+              </Link>
           </div>
         </div>
           

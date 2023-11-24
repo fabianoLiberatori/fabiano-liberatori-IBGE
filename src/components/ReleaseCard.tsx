@@ -1,8 +1,8 @@
+import { Link } from 'react-router-dom';
 import styles from './ReleaseCard.module.css';
 
 function ReleaseCard(oneRelease) {
   const {titulo, introducao, data_publicacao, link} = oneRelease;
-  console.log(oneRelease);
 
   function dataConvert() {
     const data = new Date();
@@ -34,7 +34,10 @@ function ReleaseCard(oneRelease) {
         { introducao }
       </div>
       <div className={ styles.divdata}>
-        <span className={ styles.diastext }>{ diasPassados }</span><span className={ styles.spanlink }>Leia a notícia aqui</span>
+        <span className={ styles.diastext }>{ diasPassados }</span>
+        <Link to={ link } className={ styles.spanlink }>
+          <span className={ styles.spanlink }>Leia mais aqui</span>
+        </Link>
       </div>
         <hr />
     </>

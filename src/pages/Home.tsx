@@ -9,6 +9,7 @@ import styles from './Home.module.css'
 
 function Home() {
   const { newsIBGE, dataRelease, navPlace, setNavPlace } = useContext(NewsContext);
+  const [favorites, setFavorites] = useState([]);
 
 
   useEffect(() => {
@@ -21,8 +22,12 @@ function Home() {
         link: 'link_0',
       }]))
     }
+    const favoriteStore = JSON.parse(localStorage.getItem('favorite'));
+    const favoriteFilter = favoriteStore.filter((fav) => fav.id !== favoriteStore[0].id)
+    setFavorites(favoriteFilter);
+    
     console.log('loop home');
-  }, [newsIBGE]);
+  }, [navPlace]);
 
   return (
     <section>
@@ -70,6 +75,23 @@ function Home() {
           />
           </article>
         ))}
+        {navPlace.includes('Favoritas') && favorites.length > 0 ? 
+      favorites.map((news) => (
+        <article
+          key={ news.id }
+          className={ styles.newsCard }
+        >
+        <NewsCard
+          id={ news.id }
+          titulo={ news.titulo }
+          introducao= {news.introducao }
+          data_publicacao= { news.data_publicacao }
+          link={news.link}
+        />
+        </article>
+      )) :
+      <h2 className={ styles.nofavorite }>Sem favoritos marcados</h2>
+      }
       </section>
     
       {navPlace.includes('Mais recentes') &&

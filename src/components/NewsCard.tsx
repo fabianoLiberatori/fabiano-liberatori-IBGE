@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from './NewsCard.module.css'
 import HeartBlack from '../images/HeartBlack.svg';
 import HeartRed from '../images/HeartRed.svg';
+import { Link } from "react-router-dom";
 
 function NewsCard(oneNews) {
   const {id, titulo, introducao, data_publicacao, link} = oneNews;
@@ -13,6 +14,8 @@ function NewsCard(oneNews) {
       const favoritesId = favorites.map((ele) => ele.id)
       setIsFavorite(favoritesId);
     }
+    console.log('loop newsCard');
+    
   }, []);
   
   function dataConvert() {
@@ -63,7 +66,10 @@ function NewsCard(oneNews) {
         { introducao }
       </div>
       <div className={ styles.divdata}>
-        <span className={ styles.diastext }>{ diasPassados }</span><span className={ styles.spanlink }>Leia a notícia aqui</span>
+        <span className={ styles.diastext }>{ diasPassados }</span>
+        <Link to={ link } className={ styles.spanlink }>
+          <span className={ styles.spanlink }>Leia a notícia aqui</span>
+        </Link>
       </div>
         <hr />
         <div className={ styles.checkFavorite }>

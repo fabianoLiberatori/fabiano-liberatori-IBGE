@@ -1,11 +1,10 @@
-import { useEffect, useContext, useState } from "react";
+import { useContext } from "react";
 import NewsContext from "../context/NewsContext";
 import styles from './Placeholder.module.css';
 import group from '../images/Group273.svg';
 
 function Placeholder() {
   const { navPlace, setNavPlace } = useContext(NewsContext);
-  console.log(navPlace);
   
   function navToggle(navClicked){
     setNavPlace(navClicked);

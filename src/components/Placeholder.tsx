@@ -3,10 +3,15 @@ import NewsContext from "../context/NewsContext";
 import styles from './Placeholder.module.css';
 import group from '../images/Group273.svg';
 
-function Placeholder() {
-  const { navPlace, setNavPlace } = useContext(NewsContext);
+function Placeholder(param) {
+  const { setInputFilter } = param;
+  const { navPlace, setNavPlace, dataIBGE, setNewsIBGE } = useContext(NewsContext);
   
   function navToggle(navClicked){
+    const newsFilter = dataIBGE.filter((news) => news.tipo === 'Notícia');
+    const olderNews = newsFilter.filter((news) => news.id !== newsFilter[0].id);
+    setInputFilter('');
+    setNewsIBGE(olderNews);
     setNavPlace(navClicked);
   }
   

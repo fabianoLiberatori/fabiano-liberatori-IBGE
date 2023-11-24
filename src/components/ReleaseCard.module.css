@@ -1,3 +1,12 @@
+.imgresponse {
+  display: none;
+  @media (max-width: 380px) {
+    width: 340px;
+    display: block;
+    border-radius: 1%;
+  }
+}
+
 .titulo {
   font-family: IBM Plex Serif;
   font-size: 18px;
@@ -11,6 +20,12 @@
   flex-shrink: 0;
   width: 388px;
   height : 45px;
+  @media (max-width: 380px) {
+    width: 330px;
+    text-align: justify;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
 }
 
 .introducao {
@@ -26,6 +41,11 @@
   height: 106px;
   flex-shrink: 0;
   background: rgba(255, 255, 255, 1);
+  @media (max-width: 380px) {
+    width: 330px;
+    text-align: justify;
+    margin: 16% 3%;
+  }
 }
 
 .divdata {
@@ -34,6 +54,17 @@
   background: rgba(255, 255, 255, 1);
   flex-shrink: 0;
   margin-bottom: 1%;
+  /* border: solid yellowgreen 1px; */
+  @media (max-width: 380px) {
+    width: 345px;
+  }
+}
+
+hr {
+  @media (max-width: 380px) {
+    width: 350px;
+    margin-bottom: 3%;
+  }
 }
 
 .diastext{

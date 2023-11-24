@@ -2,7 +2,9 @@ import { Link } from 'react-router-dom';
 import styles from './ReleaseCard.module.css';
 
 function ReleaseCard(oneRelease) {
-  const {titulo, introducao, data_publicacao, link} = oneRelease;
+  const {imagens, titulo, introducao, data_publicacao, link} = oneRelease;
+
+  const strImg = JSON.parse(imagens);
 
   function dataConvert() {
     const data = new Date();
@@ -22,11 +24,13 @@ function ReleaseCard(oneRelease) {
 
   const diasPassados = dataConvert();
 
-  console.log(diasPassados);
-  
-
   return (
     <>
+    <img
+      src={`https://agenciadenoticias.ibge.gov.br/${strImg.image_fulltext}`} 
+      alt="Foto do artigo"
+      className={ styles.imgresponse }
+      />
      <div className={ styles.titulo }>
         { titulo }
       </div>

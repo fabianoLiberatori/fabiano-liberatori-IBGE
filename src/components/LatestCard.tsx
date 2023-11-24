@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function LatestCard() {
   const { newLatest, imgLatest, dataLatest, setAllFavorites } = useContext(NewsContext);
-  const { id, titulo, introducao, data_publicacao, link } = newLatest;
+  const { imagens, id, titulo, introducao, data_publicacao, link } = newLatest;
   const [isFavorite, setIsFavorite] = useState([]);
 
   useEffect(() => {
@@ -57,6 +57,7 @@ function LatestCard() {
         introducao: introducao,
         data_publicacao: data_publicacao,
         link: link,
+        imagens: imagens,
       }]))
       setIsFavorite([...isFavorite, id]);
     }
@@ -71,10 +72,10 @@ function LatestCard() {
       className={ styles.latestimg }
       />
       <article className={ styles.artcontainer }>
-        <div>
+        <>
           <div className={ styles.divtop }>
             <p>Notícia mais recente</p>
-              <label>
+              <label className={ styles.labelresponse }>
                 <img
                 className={ styles.heart }
                 src={ isFavorite.includes(id) ? HeartRed : HeartBlack }
@@ -98,7 +99,7 @@ function LatestCard() {
                 <span className={ styles.spanlink }>Leia a notícia aqui</span>
               </Link>
           </div>
-        </div>
+        </>
           
       </article>
     </section>

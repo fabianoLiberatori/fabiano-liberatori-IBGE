@@ -5,10 +5,17 @@
   margin-right: 0;
   background: rgba(255, 255, 255, 1);
   flex-shrink: 0;
+  @media (max-width: 380px) {
+    width: 340px;
+  }
 }
 
 .heartlabel {
   background: rgba(255, 255, 255, 1);
+  /* border: solid orange 1px; */
+  @media (max-width: 380px) {
+    width: 17px;
+  }
 }
 
 .heartlabel:hover {
@@ -16,6 +23,15 @@
   cursor: pointer;
   transition: 0.9s;
   width: 20px;
+}
+
+.imgresponse {
+  display: none;
+  @media (max-width: 380px) {
+    width: 340px;
+    display: block;
+    border-radius: 1%;
+  }
 }
 
 .titulo {
@@ -31,6 +47,12 @@
   flex-shrink: 0;
   width: 388px;
   height : 45px;
+  @media (max-width: 380px) {
+    width: 330px;
+    text-align: justify;
+    margin-left: 3%;
+    margin-right: 3%;
+  }
 }
 
 .introducao {
@@ -46,6 +68,17 @@
   height: 106px;
   flex-shrink: 0;
   background: rgba(255, 255, 255, 1);
+  @media (max-width: 380px) {
+    width: 330px;
+    text-align: justify;
+    margin: 16% 3%;
+  }
+}
+
+hr {
+  @media (max-width: 380px) {
+    width: 350px;
+  }
 }
 
 .divdata {
@@ -54,6 +87,10 @@
   background: rgba(255, 255, 255, 1);
   flex-shrink: 0;
   margin-bottom: 1%;
+  /* border: solid yellowgreen 1px; */
+  @media (max-width: 380px) {
+    width: 345px;
+  }
 }
 
 .diastext{

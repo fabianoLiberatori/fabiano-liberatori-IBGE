@@ -8,9 +8,8 @@ import styles from './Home.module.css'
 
 
 function Home() {
-  const { newsIBGE, dataRelease, navPlace, setNavPlace, allFavorites } = useContext(NewsContext);
-  // const [favorites, setFavorites] = useState([]);
-
+  const { dataIBGE, newsIBGE, setNewsIBGE, dataRelease, navPlace, setNavPlace, allFavorites } = useContext(NewsContext);
+  const [inputFilter, setInputFilter] = useState('');
 
   useEffect(() => {
     if(JSON.parse(localStorage.getItem('favorite')) === null) {
@@ -20,26 +19,39 @@ function Home() {
         introducao: 'introducao_0',
         data_publicacao: 'data_publicacao_0',
         link: 'link_0',
+        imagens: 'imagens_0'
       }]))
     }
-    // const favoriteStore = JSON.parse(localStorage.getItem('favorite'));
-    // const favoriteFilter = favoriteStore.filter((fav) => fav.id !== favoriteStore[0].id)
-    // setFavorites(favoriteFilter);
-    
     console.log('loop home');
-  }, [navPlace]);
+  }, []);
+
+  function setFilterByInput(event){
+    const { value } = event.target;
+    const newsFilter = dataIBGE.filter((news) => news.tipo === 'Notícia');
+    const olderNews = newsFilter.filter((news) => news.id !== newsFilter[0].id);
+    const textFilter = olderNews.filter((news) => (
+      news.titulo.toLocaleLowerCase().includes(value.toLocaleLowerCase())
+    ));
+    setNewsIBGE(textFilter);
+    setInputFilter(value);
+  }
 
   return (
-    <section>
+    <main className={ styles.mainresponse }>
       <LatestCard />
-      <Placeholder />
+      <Placeholder
+        setInputFilter={ setInputFilter }
+      />
 
       {
         navPlace.includes('Notícia')
         &&
         <input
           type="text"
+          value={ inputFilter }
+          onChange={ (event) => setFilterByInput(event) }
           placeholder='Pesquisar por titulo'
+          className={ styles.inputsearch }
         />
       }
 
@@ -53,6 +65,7 @@ function Home() {
               className={ styles.newsCard }
               >
               <NewsCard
+                imagens={ news.imagens }
                 id={ news.id }
                 titulo={ news.titulo }
                 introducao= {news.introducao }
@@ -71,6 +84,7 @@ function Home() {
               className={ styles.newsCard }
               >
               <NewsCard
+                imagens={ news.imagens }
                 id={ news.id }
                 titulo={ news.titulo }
                 introducao= {news.introducao }
@@ -89,6 +103,7 @@ function Home() {
              className={ styles.newsCard }
               >
               <ReleaseCard
+                imagens={ rele.imagens }
                 titulo={ rele.titulo }
                 introducao= {rele.introducao }
                 data_publicacao= { rele.data_publicacao }
@@ -106,6 +121,7 @@ function Home() {
               className={ styles.newsCard }
               >
               <NewsCard
+                imagens={ news.imagens }
                 id={ news.id }
                 titulo={ news.titulo }
                 introducao= {news.introducao }
@@ -137,7 +153,7 @@ function Home() {
           </div>
       }
 
-    </section>
+    </main>
     
   )
 }

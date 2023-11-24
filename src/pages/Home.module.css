@@ -1,3 +1,41 @@
+.mainresponse {
+  @media (max-width: 380px) {
+    width: 380px;
+  }
+}
+
+.inputsearch {
+  display: flex;
+  margin-top: 1%;
+  margin-left: 11%;
+  width: 350px;
+  height: 35px;
+  border-radius: 5px;
+  font-size: 15px;
+  @media (max-width: 380px) {
+    width: 270px;
+    height: 30px;
+  }
+}
+
+.inputsearch:hover {
+  display: flex;
+  margin-top: 1%;
+  margin-left: 12%;
+  width: 410px;
+  height: 45px;
+  border-radius: 5px;
+  cursor: text;
+  transition: 0.35s;
+  font-size: 25px;
+  margin-left: 11%;
+  @media (max-width: 380px) {
+    width: 320px;
+    height: 30px;
+    margin-left: 6%;
+  }
+}
+
 .newscontainer {
   display: flex;
   flex-wrap: wrap;
@@ -6,6 +44,12 @@
   width: 1394px;
   margin-right: 11%;
   margin-left: 11%;
+  @media (max-width: 380px) {
+    width: 360px;
+    margin-right: 3%;
+    margin-left: 2%;
+    justify-content: center;
+  }
 }
 
 .newsCard {
@@ -21,6 +65,10 @@
   box-shadow: 0px 2px 14px 0px #2A2A2A3D;
   background: rgba(255, 255, 255, 1);
   border-radius: 1%;
+  @media (max-width: 380px) {
+    width: 360px;
+    height: 600px;
+  }
 }
 
 .divlink {
@@ -34,6 +82,11 @@
   margin-left: 42%;
   margin-bottom: 2%;
   flex-shrink: 0;
+  @media (max-width: 500px) {
+    width: 240px;
+    margin: auto;
+    margin-bottom: 3%;
+  }
 }
 
 .divlink:hover {

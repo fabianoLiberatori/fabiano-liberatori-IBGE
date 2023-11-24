@@ -5,6 +5,9 @@
   margin-left: 0;
   height: 90px;
   /* border: solid red 5px; */
+  @media (max-width: 380px) {
+    width: 380px;
+  }
 }
 
 .h1 {
@@ -20,6 +23,10 @@
   font-weight: 900;
   line-height: 15px; /* 17.442% */
   letter-spacing: 1.6px;
+  @media (max-width: 380px) {
+    width: 380px;
+    font-size: 36px;
+  }
 }
 
 .logo {
@@ -27,4 +34,8 @@
   height: 90px;
   flex-shrink: 0;
   justify-content: start;
+  @media (max-width: 380px) {
+    width: 90px;
+    height: 90px;
+  }
 }

@@ -7,8 +7,10 @@ import NewsContext from "../context/NewsContext";
 
 function NewsCard(oneNews) {
   const { setAllFavorites } = useContext(NewsContext);
-  const {id, titulo, introducao, data_publicacao, link} = oneNews;
+  const { imagens, id, titulo, introducao, data_publicacao, link } = oneNews;
   const [isFavorite, setIsFavorite] = useState([]);
+
+  const strImg = JSON.parse(imagens);
 
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem('favorite'));
@@ -60,6 +62,7 @@ function NewsCard(oneNews) {
         introducao: introducao,
         data_publicacao: data_publicacao,
         link: link,
+        imagens: imagens,
       }]))
       setIsFavorite([...isFavorite, id]);
     }
@@ -68,6 +71,11 @@ function NewsCard(oneNews) {
   
   return (
     <>
+    <img
+      src={`https://agenciadenoticias.ibge.gov.br/${strImg.image_fulltext}`} 
+      alt="Foto do artigo"
+      className={ styles.imgresponse }
+      />
       <div className={ styles.titulo }>
         { titulo }
       </div>

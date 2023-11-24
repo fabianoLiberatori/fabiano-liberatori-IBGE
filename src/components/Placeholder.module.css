@@ -6,9 +6,17 @@
   margin-right: 11%;
   margin-left: 11%;
   height: 67px;
+  /* border: solid red 1px; */
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
   flex-shrink: 0;
+  @media (max-width: 380px) {
+    width: 350px;
+    margin-left: 3%;
+    margin-right: 3%;
+    height: 50px;
+    margin-bottom: 2%;
+  }
 }
 
 .navdiv{
@@ -16,12 +24,17 @@
   background: rgba(255, 255, 255, 0.85);
   margin-left: 2%;
   margin-right: 4%;
-  width: 30vw;
+  width: 600px;
   font-family: Poppins;
   font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  /* border: solid purple 1px; */
+  @media (max-width: 380px) {
+    width: 350px;
+    height: 20px;
+  }
 }
 .navtext {
   display: inline;
@@ -35,6 +48,13 @@
   font-weight: 600;
   line-height: normal;
   text-decoration: underline red 4px;
+  /* border: solid orange 1px; */
+  @media (max-width: 380px) {
+    width: 320px;
+    height: 18px;
+    font-size: 12px;
+    text-decoration: underline red 2px;
+  }
 }
 
 .navlinks {
@@ -48,6 +68,11 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  @media (max-width: 380px) {
+    width: 320px;
+    height: 44px;
+    font-size: 12px;
+  }
 }
 
 .navlinks:hover {
@@ -63,8 +88,16 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  @media (max-width: 380px) {
+    width: 320px;
+    height: 44px;
+    font-size: 12px;
+  }
 }
 
 .navgroup {
   margin-right: 2%;
+  @media (max-width: 380px) {
+    width: 28px;
+  }
 }

@@ -36,6 +36,22 @@
   flex-shrink: 0;
 }
 
+.divlink:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  border: 1px solid rgb(47, 56, 137);
+  width: 250px;
+  height: 70px;
+  margin-left: 42%;
+  margin-bottom: 2%;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: 0.35s;
+}
+
+
 .spanlink {
   color: #C31815;
   text-align: center;
@@ -46,4 +62,18 @@
   line-height: 15px; /* 107.143% */
   letter-spacing: 1.6px;
   text-transform: uppercase;
+}
+
+.spanlink:hover {
+  color: #C31815;
+  text-align: center;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 15px; /* 107.143% */
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.35s;
 }

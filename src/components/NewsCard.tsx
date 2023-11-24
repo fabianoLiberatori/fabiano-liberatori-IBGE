@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import styles from './NewsCard.module.css'
 import HeartBlack from '../images/HeartBlack.svg';
 import HeartRed from '../images/HeartRed.svg';
-import { func } from "prop-types";
 
 function NewsCard(oneNews) {
   const {id, titulo, introducao, data_publicacao, link} = oneNews;

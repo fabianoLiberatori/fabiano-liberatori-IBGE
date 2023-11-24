@@ -54,7 +54,6 @@
   cursor: pointer;
   transition: 0.35s;
   display: inline;
-  background: rgba(255, 255, 255, 1);
   color: brown;
   margin-left: 2%;
   margin-right: 4%;
@@ -64,7 +63,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  box-shadow: 5px 10px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 .navgroup {

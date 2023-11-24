@@ -2,6 +2,7 @@ import { useEffect, useContext, useState } from "react";
 import LatestCard from "../components/LatestCard";
 import NewsCard from "../components/NewsCard";
 import Placeholder from "../components/Placeholder";
+import ReleaseCard from "../components/ReleaseCard";
 import NewsContext from "../context/NewsContext";
 import styles from './Home.module.css'
 
@@ -53,6 +54,19 @@ function Home() {
             introducao= {news.introducao }
             data_publicacao= { news.data_publicacao }
             link={news.link}
+          />
+          </article>
+        ))}
+         {navPlace.includes('Release') && dataRelease.map((rele) => (
+          <article
+            key={ rele.id }
+            className={ styles.newsCard }
+          >
+          <ReleaseCard
+            titulo={ rele.titulo }
+            introducao= {rele.introducao }
+            data_publicacao= { rele.data_publicacao }
+            link={rele.link}
           />
           </article>
         ))}

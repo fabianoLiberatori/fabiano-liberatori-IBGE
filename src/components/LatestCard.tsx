@@ -68,6 +68,7 @@ function LatestCard() {
             <p>Notícia mais recente</p>
               <label>
                 <img
+                className={ styles.heart }
                 src={ isFavorite.includes(id) ? HeartRed : HeartBlack }
                 alt="Desfavoritado"
                 />

@@ -20,7 +20,7 @@ export type NewLatestType = {
   introducao: string,
   data_publicacao: string,
   link: string,
-};
+}[];
 
 export type PropNewsProp = {
   imagens: string,

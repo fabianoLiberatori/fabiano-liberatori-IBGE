@@ -9,8 +9,8 @@ type ChildrenType = {
 
 function NewsProvider({ children }: ChildrenType) {
   const [dataIBGE, setDataIBGE] = useState<NewsIBGEType>([]);
-  const [newLatest, setNewLatest] = useState<NewLatestType>([]);
-  const [imgLatest, setImgLatest] = useState<imgParseType>([]);
+  const [newLatest, setNewLatest] = useState<NewLatestType[]>([]);
+  const [imgLatest, setImgLatest] = useState<imgParseType[]>([]);
   const [dataLatest, setDataLatest] = useState<NewsIBGEType>([]);
   const [newsIBGE, setNewsIBGE] = useState([]);
   const [dataRelease, setDataRelease] = useState([]);

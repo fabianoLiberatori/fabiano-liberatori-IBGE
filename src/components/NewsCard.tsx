@@ -4,18 +4,19 @@ import styles from './NewsCard.module.css';
 import HeartBlack from '../images/HeartBlack.svg';
 import HeartRed from '../images/HeartRed.svg';
 import NewsContext from '../context/NewsContext';
+import { PropNewsProp } from '../types';
 
-function NewsCard(oneNews) {
+function NewsCard(oneNews: PropNewsProp) {
   const { setAllFavorites } = useContext(NewsContext);
   const { imagens, id, titulo, introducao, data_publicacao, link } = oneNews;
-  const [isFavorite, setIsFavorite] = useState([]);
+  const [isFavorite, setIsFavorite] = useState<string[]>([]);
 
   const strImg = JSON.parse(imagens);
 
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem('favorite'));
     if (favorites !== null) {
-      const favoritesId = favorites.map((ele) => ele.id);
+      const favoritesId = favorites.map((ele: { id: string; }) => ele.id);
       setIsFavorite(favoritesId);
     }
     console.log('loop newsCard');
@@ -40,17 +41,17 @@ function NewsCard(oneNews) {
 
   function setContextFavorite() {
     const favoriteStore = JSON.parse(localStorage.getItem('favorite'));
-    const favoriteFilter = favoriteStore.filter((fav) => fav.id !== favoriteStore[0].id);
+    const favoriteFilter = favoriteStore.filter((fav: { id: string; }) => fav.id !== favoriteStore[0].id);
     setAllFavorites(favoriteFilter);
   }
 
   function setLocalFavorite() {
     const favorites = JSON.parse(localStorage.getItem('favorite'));
-    const favoritesId = favorites.map((ele) => ele.id);
+    const favoritesId = favorites.map((ele: { id: string; }) => ele.id);
     if (favoritesId.includes(id)) {
-      const reFavorite = favorites.filter((ele) => ele.id !== id);
+      const reFavorite = favorites.filter((ele: { id: string; }) => ele.id !== id);
       localStorage.setItem('favorite', JSON.stringify(reFavorite));
-      const favoritesId = reFavorite.map((ele) => ele.id);
+      const favoritesId = reFavorite.map((ele: { id: string; }) => ele.id);
       setIsFavorite(favoritesId);
     }
     if (!favoritesId.includes(id)) {

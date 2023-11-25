@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import NewsContext from './NewsContext';
 import NewsApi from '../services/Apifetch';
-import { NewsContextType } from '../types';
+import { ProviderType } from '../types';
 
 type ChildrenType = {
   children: React.ReactNode,
@@ -23,7 +23,7 @@ function NewsProvider({ children }: ChildrenType) {
         const data = await NewsApi();
         setDataIBGE(data.items);
 
-        const newsFilter = data.items.filter((news) => news.tipo === 'Notícia');
+        const newsFilter = data.items.filter((news: ProviderType) => news.tipo === 'Notícia');
 
         setNewLatest(newsFilter[0]);
         const extImg = newsFilter[0].imagens;
@@ -32,15 +32,16 @@ function NewsProvider({ children }: ChildrenType) {
         const dataFormat = newsFilter[0].data_publicacao.slice(0, 10).split('/');
         setDataLatest(dataFormat);
 
-        const olderNews = newsFilter.filter((news) => news.id !== newsFilter[0].id);
+        const olderNews = newsFilter.filter((news: ProviderType) => news.id !== newsFilter[0].id);
         setNewsIBGE(olderNews);
 
-        const releaseFilter = data.items.filter((news) => news.tipo === 'Release');
+        const releaseFilter = data.items.filter((news: ProviderType) => news.tipo === 'Release');
         setDataRelease(releaseFilter);
       }
     }
     newsFetch();
   }, []);
+console.log(imgLatest);
 
   const values = {
     dataIBGE,

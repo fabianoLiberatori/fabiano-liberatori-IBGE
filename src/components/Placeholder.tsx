@@ -3,7 +3,7 @@ import NewsContext from '../context/NewsContext';
 import styles from './Placeholder.module.css';
 import group from '../images/Group273.svg';
 
-function Placeholder(param) {
+function Placeholder(param: any) {
   const { setInputFilter } = param;
   const {
     navPlace,
@@ -12,7 +12,7 @@ function Placeholder(param) {
     setNewsIBGE,
     setDataRelease } = useContext(NewsContext);
 
-  function navToggle(navClicked) {
+  function navToggle(navClicked: string) {
     const newsFilter = dataIBGE.filter((news) => news.tipo === 'Notícia');
     const newsRelease = dataIBGE.filter((news) => news.tipo === 'Release');
     const olderNews = newsFilter.filter((news) => news.id !== newsFilter[0].id);

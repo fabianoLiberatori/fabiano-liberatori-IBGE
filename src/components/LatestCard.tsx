@@ -8,12 +8,12 @@ import HeartRed from '../images/HeartRed.svg';
 function LatestCard() {
   const { newLatest, imgLatest, dataLatest, setAllFavorites } = useContext(NewsContext);
   const { imagens, id, titulo, introducao, data_publicacao, link } = newLatest;
-  const [isFavorite, setIsFavorite] = useState([]);
+  const [isFavorite, setIsFavorite] = useState<string[]>([]);
 
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem('favorite'));
     if (favorites !== null) {
-      const favoritesId = favorites.map((ele) => ele.id);
+      const favoritesId = favorites.map((ele: {id: string}) => ele.id);
       setIsFavorite(favoritesId);
     }
   }, []);
@@ -36,17 +36,17 @@ function LatestCard() {
 
   function setContextFavorite() {
     const favoriteStore = JSON.parse(localStorage.getItem('favorite'));
-    const favoriteFilter = favoriteStore.filter((fav) => fav.id !== favoriteStore[0].id);
+    const favoriteFilter = favoriteStore.filter((fav: {id: string}) => fav.id !== favoriteStore[0].id);
     setAllFavorites(favoriteFilter);
   }
 
   function setLocalFavorite() {
     const favorites = JSON.parse(localStorage.getItem('favorite'));
-    const favoritesId = favorites.map((ele) => ele.id);
+    const favoritesId = favorites.map((ele: {id: string}) => ele.id);
     if (favoritesId.includes(id)) {
-      const reFavorite = favorites.filter((ele) => ele.id !== id);
+      const reFavorite = favorites.filter((ele: {id: string}) => ele.id !== id);
       localStorage.setItem('favorite', JSON.stringify(reFavorite));
-      const favoritesId = reFavorite.map((ele) => ele.id);
+      const favoritesId = reFavorite.map((ele: {id: string}) => ele.id);
       setIsFavorite(favoritesId);
     }
     if (!favoritesId.includes(id)) {

@@ -16,7 +16,7 @@ function Home() {
     setNavPlace,
     allFavorites,
     setDataRelease } = useContext(NewsContext);
-  const [inputFilter, setInputFilter] = useState('');
+  const [inputFilter, setInputFilter] = useState<string>('');
 
   useEffect(() => {
     if (JSON.parse(localStorage.getItem('favorite')) === null) {
@@ -31,7 +31,7 @@ function Home() {
     }
   }, []);
 
-  function setFilterByInput(event) {
+  function setFilterByInput(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
     const newsFilter = dataIBGE.filter((news) => news.tipo === 'Notícia');
     const newsRelease = dataIBGE.filter((news) => news.tipo === 'Release');
@@ -123,6 +123,7 @@ function Home() {
               className={ styles.newsCard }
             >
               <ReleaseCard
+                id={ rele.id }
                 imagens={ rele.imagens }
                 titulo={ rele.titulo }
                 introducao={ rele.introducao }

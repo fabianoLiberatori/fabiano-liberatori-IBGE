@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import styles from './ReleaseCard.module.css';
+import { PropNewsProp } from '../types';
 
-function ReleaseCard(oneRelease) {
+function ReleaseCard(oneRelease: PropNewsProp) {
   const { imagens, titulo, introducao, data_publicacao, link } = oneRelease;
 
   const strImg = JSON.parse(imagens);

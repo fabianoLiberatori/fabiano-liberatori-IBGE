@@ -15,11 +15,11 @@ function Home() {
     navPlace,
     setNavPlace,
     allFavorites,
-    setDataRelease } = useContext(NewsContext);
+    setDataRelease } = useContext<any>(NewsContext);
   const [inputFilter, setInputFilter] = useState<string>('');
 
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem('favorite')) === null) {
+    if (JSON.parse(localStorage.getItem('favorite') || '[]') === null) {
       localStorage.setItem('favorite', JSON.stringify([{
         id: '0',
         titulo: 'titulo_0',
@@ -33,15 +33,15 @@ function Home() {
 
   function setFilterByInput(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
-    const newsFilter = dataIBGE.filter((news) => news.tipo === 'Notícia');
-    const newsRelease = dataIBGE.filter((news) => news.tipo === 'Release');
-    const olderNews = newsFilter.filter((news) => news.id !== newsFilter[0].id);
+    const newsFilter = dataIBGE.filter((news: any) => news.tipo === 'Notícia');
+    const newsRelease = dataIBGE.filter((news: any) => news.tipo === 'Release');
+    const olderNews = newsFilter.filter((news: any) => news.id !== newsFilter[0].id);
 
-    const textFilter = olderNews.filter((news) => (
+    const textFilter = olderNews.filter((news: any) => (
       news.titulo.toLocaleLowerCase().includes(value.toLocaleLowerCase())
     ));
 
-    const releaseFilter = newsRelease.filter((news) => (
+    const releaseFilter = newsRelease.filter((news: any) => (
       news.titulo.toLocaleLowerCase().includes(value.toLocaleLowerCase())
     ));
     setNewsIBGE(textFilter);
@@ -81,7 +81,7 @@ function Home() {
       <section className={ styles.newscontainer }>
 
         {
-          navPlace.includes('Mais recentes') && newsIBGE.slice(0, 9).map((news) => (
+          navPlace.includes('Mais recentes') && newsIBGE.slice(0, 9).map((news: any) => (
             <article
               key={ news.id }
               className={ styles.newsCard }
@@ -99,7 +99,7 @@ function Home() {
         }
 
         {
-          navPlace.includes('Notícia') && newsIBGE.map((news) => (
+          navPlace.includes('Notícia') && newsIBGE.map((news: any) => (
             <article
               key={ news.id }
               className={ styles.newsCard }
@@ -117,7 +117,7 @@ function Home() {
         }
 
         {
-          navPlace.includes('Release') && dataRelease.map((rele) => (
+          navPlace.includes('Release') && dataRelease.map((rele: any) => (
             <article
               key={ rele.id }
               className={ styles.newsCard }
@@ -135,7 +135,7 @@ function Home() {
         }
 
         {
-          navPlace.includes('Favoritas') && allFavorites.map((news) => (
+          navPlace.includes('Favoritas') && allFavorites.map((news: any) => (
             <article
               key={ news.id }
               className={ styles.newsCard }

@@ -1,9 +1,10 @@
 .sectcontainer {
   align-items: center;
   display: flex;
-  justify-content: space-between;
-  margin: 6% 11%;
-  width: 1394px;
+  justify-content: space-around;
+  margin-top: 6%;
+  margin-bottom: 6%;
+  width: 1920px;
 
   @media ( max-width : 380px ) {
     flex-direction: column;

@@ -6,9 +6,9 @@
   flex-shrink: 0;
   height: 67px;
   justify-content: space-between;
-  margin-left: 11%;
-  margin-right: 11%;
-  width: 1394px;
+  margin-left: 3%;
+  margin-right: 3%;
+  width: 1806px;
 
   @media ( max-width : 380px ) {
     height: 50px;

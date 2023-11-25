@@ -42,9 +42,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-left: 11%;
-  margin-right: 11%;
-  width: 1394px;
+  margin-left: 12%;
+  margin-right: 12%;
+  width: 1400px;
 
   @media ( max-width : 380px ) {
     justify-content: center;
@@ -82,7 +82,7 @@
   height: 60px;
   justify-content: center;
   margin-bottom: 2%;
-  margin-left: 42%;
+  margin-left: 43%;
   width: 220px;
 
   @media ( max-width : 500px ) {

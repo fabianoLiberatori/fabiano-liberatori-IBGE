@@ -40,7 +40,7 @@ function NewsCard(oneNews: PropNewsProp) {
 
   function setContextFavorite() {
     const favoriteStore = JSON.parse(localStorage.getItem('favorite') || '[]');
-    const favoriteFilter = favoriteStore.filter((fav: { id: string; }) => fav.id !== favoriteStore[0].id);
+    const favoriteFilter = favoriteStore.filter((fav: { id: string; }) => fav.id !== '0');
     setAllFavorites(favoriteFilter);
   }
 

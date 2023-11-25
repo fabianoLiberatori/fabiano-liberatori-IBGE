@@ -41,7 +41,6 @@ function NewsProvider({ children }: ChildrenType) {
     }
     newsFetch();
   }, []);
-console.log(imgLatest);
 
   const values = {
     dataIBGE,

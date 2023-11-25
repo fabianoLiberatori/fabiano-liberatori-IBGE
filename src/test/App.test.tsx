@@ -1,6 +1,5 @@
-import { render, screen, waitForElementToBeRemoved } from '@testing-library/react';
-import { vi, describe, test, expect } from 'vitest';
-import userEvent from '@testing-library/user-event';
+import { render, screen } from '@testing-library/react';
+import { describe, test } from 'vitest';
 import App from '../App';
 import NewsProvider from '../context/NewsProvider';
 import { BrowserRouter } from 'react-router-dom';

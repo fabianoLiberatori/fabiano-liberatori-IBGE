@@ -1,5 +1,4 @@
-export type NewsIBGEType = [
-  {
+export type NewsIBGEType = {
     id: string,
     tipo: string,
     titulo: string,
@@ -12,8 +11,7 @@ export type NewsIBGEType = [
     produtos_relacionados: string,
     destaque: boolean,
     link: string,
-  },
-];
+  }[];
 
 export type NewLatestType = {
   imagens: string,

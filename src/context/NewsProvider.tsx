@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 import NewsContext from './NewsContext';
 import NewsApi from '../services/Apifetch';
-import { ProviderType } from '../types';
+import { NewLatestType, NewsIBGEType, ProviderType, imgParseType } from '../types';
 
 type ChildrenType = {
   children: React.ReactNode,
 };
 
 function NewsProvider({ children }: ChildrenType) {
-  const [dataIBGE, setDataIBGE] = useState([]);
-  const [newLatest, setNewLatest] = useState([]);
-  const [imgLatest, setImgLatest] = useState([]);
-  const [dataLatest, setDataLatest] = useState([]);
+  const [dataIBGE, setDataIBGE] = useState<NewsIBGEType>([]);
+  const [newLatest, setNewLatest] = useState<NewLatestType>([]);
+  const [imgLatest, setImgLatest] = useState<imgParseType>([]);
+  const [dataLatest, setDataLatest] = useState<NewsIBGEType>([]);
   const [newsIBGE, setNewsIBGE] = useState([]);
   const [dataRelease, setDataRelease] = useState([]);
   const [navPlace, setNavPlace] = useState('Mais recentes');
@@ -40,7 +40,7 @@ function NewsProvider({ children }: ChildrenType) {
       }
     }
     newsFetch();
-  }, []);
+  }, [dataIBGE.length]);
 
   const values = {
     dataIBGE,

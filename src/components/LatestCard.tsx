@@ -66,6 +66,7 @@ function LatestCard() {
   return (
     <section className={ styles.sectcontainer }>
       <img
+        data-testid='imagem-latest'
         src={ `https://agenciadenoticias.ibge.gov.br/${imgLatest.image_fulltext}` }
         alt="Foto da notícia mais recente"
         className={ styles.latestimg }
@@ -75,6 +76,7 @@ function LatestCard() {
           <p>Notícia mais recente</p>
           <label className={ styles.labelresponse }>
             <img
+              data-testid='imgheart'
               className={ styles.heart }
               src={ isFavorite.includes(id) ? HeartRed : HeartBlack }
               alt="Desfavoritado"
@@ -92,7 +94,7 @@ function LatestCard() {
         <p className={ styles.introducaotext }>{ introducao }</p>
         <br />
         <div className={ styles.divbottom }>
-          <p>{ diasCorridos }</p>
+          <p data-testid='dias-corridos'>{ diasCorridos }</p>
           <Link to={ link } className={ styles.spanlink }>
             <span className={ styles.spanlink }>Leia a notícia aqui</span>
           </Link>

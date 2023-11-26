@@ -84,6 +84,7 @@ function Home() {
           navPlace.includes('Mais recentes') && newsIBGE.slice(0, 9).map((news: any) => (
             <article
               key={ news.id }
+              data-testid='card'
               className={ styles.newsCard }
             >
               <NewsCard
@@ -101,6 +102,7 @@ function Home() {
         {
           navPlace.includes('Notícia') && newsIBGE.map((news: any) => (
             <article
+              data-testid='card'
               key={ news.id }
               className={ styles.newsCard }
             >
@@ -119,6 +121,7 @@ function Home() {
         {
           navPlace.includes('Release') && dataRelease.map((rele: any) => (
             <article
+              data-testid='card'
               key={ rele.id }
               className={ styles.newsCard }
             >
@@ -137,6 +140,7 @@ function Home() {
         {
           navPlace.includes('Favoritas') && allFavorites.map((news: any) => (
             <article
+              data-testid='card'
               key={ news.id }
               className={ styles.newsCard }
             >

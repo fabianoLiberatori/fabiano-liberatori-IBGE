@@ -22,6 +22,16 @@ Tive poucas vezes momentos em que estava com alguma dificuldade para desenvolver
 
 Passei por volta de 30% do tempo para codar, pesquisando em documentações, videos e projetos que desenvolvi anteriormente.
 
+## Cobertura de teste
+
+Obtive mais de 85% na Branch de All files, e nas outras foram superiores a 92%.
+
+Testes são de extrema importancia, com ele se diminui muito as changes de problemas de segurança e possiveis problemas performaticos ao app.
+
+<details>
+<img src='./src/images/coverage.png' alt='coverage'>
+</details>
+
 ## Linguagens.
 
 - HTML 5

@@ -27,6 +27,7 @@ function Placeholder(param: any) {
 
       <div className={ styles.navdiv }>
         <span
+          data-testid='mais-recentes'
           className={ navPlace.includes('Mais recentes')
             ? styles.navtext
             : styles.navlinks }
@@ -36,6 +37,7 @@ function Placeholder(param: any) {
         </span>
 
         <span
+          data-testid='release'
           className={ navPlace.includes('Release')
             ? styles.navtext
             : styles.navlinks }
@@ -45,6 +47,7 @@ function Placeholder(param: any) {
         </span>
 
         <span
+          data-testid='noticia'
           className={ navPlace.includes('Notícia')
             ? styles.navtext
             : styles.navlinks }
@@ -54,6 +57,7 @@ function Placeholder(param: any) {
         </span>
 
         <span
+          data-testid='favorita'
           className={ navPlace.includes('Favoritas')
             ? styles.navtext
             : styles.navlinks }

@@ -96,6 +96,7 @@ function NewsCard(oneNews: PropNewsProp) {
             type="checkbox"
           />
           <img
+            data-testid={`favorite${id}`}
             className={ styles.heartlabel }
             src={ isFavorite.includes(id) ? HeartRed : HeartBlack }
             alt="favoritar"

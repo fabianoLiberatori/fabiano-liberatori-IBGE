@@ -6,7 +6,7 @@ import HeartBlack from '../images/HeartBlack.svg';
 import HeartRed from '../images/HeartRed.svg';
 
 function LatestCard() {
-  const { newLatest, imgLatest, dataLatest, setAllFavorites } = useContext<any>(NewsContext);
+  const { newLatest, imgLatest, dataLatest, setAllFavorites } = useContext(NewsContext);
   const { imagens, id, titulo, introducao, data_publicacao, link } = newLatest;
   const [isFavorite, setIsFavorite] = useState<string[]>([]);
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import NewsContext from './NewsContext';
 import NewsApi from '../services/Apifetch';
-import { NewLatestType, NewsIBGEType, ProviderType, imgParseType } from '../types';
+import { NewLatestType, NewsIBGEType, ProviderType, favoriteType, imgParseType } from '../types';
 
 type ChildrenType = {
   children: React.ReactNode,
@@ -9,13 +9,13 @@ type ChildrenType = {
 
 function NewsProvider({ children }: ChildrenType) {
   const [dataIBGE, setDataIBGE] = useState<NewsIBGEType>([]);
-  const [newLatest, setNewLatest] = useState<NewLatestType[]>([]);
-  const [imgLatest, setImgLatest] = useState<imgParseType[]>([]);
+  const [newLatest, setNewLatest] = useState<NewLatestType>();
+  const [imgLatest, setImgLatest] = useState<imgParseType>();
   const [dataLatest, setDataLatest] = useState<NewsIBGEType>([]);
   const [newsIBGE, setNewsIBGE] = useState([]);
   const [dataRelease, setDataRelease] = useState([]);
   const [navPlace, setNavPlace] = useState('Mais recentes');
-  const [allFavorites, setAllFavorites] = useState([]);
+  const [allFavorites, setAllFavorites] = useState<favoriteType>([]);
 
   useEffect(() => {
     async function newsFetch() {
@@ -42,22 +42,22 @@ function NewsProvider({ children }: ChildrenType) {
     newsFetch();
   }, [dataIBGE.length]);
 
-  const values = {
-    dataIBGE,
-    newLatest,
-    imgLatest,
-    dataLatest,
-    newsIBGE,
-    setNewsIBGE,
-    dataRelease,
-    setDataRelease,
-    navPlace,
-    setNavPlace,
-    allFavorites,
-    setAllFavorites,
-  };
   return (
-    <NewsContext.Provider value={ values }>
+    <NewsContext.Provider value={{
+      dataIBGE,
+      newLatest,
+      imgLatest,
+      dataLatest,
+      newsIBGE,
+      setNewsIBGE,
+      dataRelease,
+      setDataRelease,
+      navPlace,
+      setNavPlace,
+      allFavorites,
+      setAllFavorites,
+    }
+    }>
       {children}
     </NewsContext.Provider>
   );

@@ -15,7 +15,7 @@ function Home() {
     navPlace,
     setNavPlace,
     allFavorites,
-    setDataRelease } = useContext<any>(NewsContext);
+    setDataRelease } = useContext(NewsContext);
   const [inputFilter, setInputFilter] = useState<string>('');
 
   useEffect(() => {
@@ -33,15 +33,15 @@ function Home() {
 
   function setFilterByInput(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
-    const newsFilter = dataIBGE.filter((news: any) => news.tipo === 'Notícia');
-    const newsRelease = dataIBGE.filter((news: any) => news.tipo === 'Release');
-    const olderNews = newsFilter.filter((news: any) => news.id !== newsFilter[0].id);
+    const newsFilter = dataIBGE.filter((news) => news.tipo === 'Notícia');
+    const newsRelease = dataIBGE.filter((news) => news.tipo === 'Release');
+    const olderNews = newsFilter.filter((news) => news.id !== newsFilter[0].id);
 
-    const textFilter = olderNews.filter((news: any) => (
+    const textFilter = olderNews.filter((news) => (
       news.titulo.toLocaleLowerCase().includes(value.toLocaleLowerCase())
     ));
 
-    const releaseFilter = newsRelease.filter((news: any) => (
+    const releaseFilter = newsRelease.filter((news) => (
       news.titulo.toLocaleLowerCase().includes(value.toLocaleLowerCase())
     ));
     setNewsIBGE(textFilter);
@@ -81,7 +81,7 @@ function Home() {
       <section className={ styles.newscontainer }>
 
         {
-          navPlace.includes('Mais recentes') && newsIBGE.slice(0, 9).map((news: any) => (
+          navPlace.includes('Mais recentes') && newsIBGE.slice(0, 9).map((news) => (
             <article
               key={ news.id }
               data-testid='card'
@@ -100,7 +100,7 @@ function Home() {
         }
 
         {
-          navPlace.includes('Notícia') && newsIBGE.map((news: any) => (
+          navPlace.includes('Notícia') && newsIBGE.map((news) => (
             <article
               data-testid='card'
               key={ news.id }
@@ -119,7 +119,7 @@ function Home() {
         }
 
         {
-          navPlace.includes('Release') && dataRelease.map((rele: any) => (
+          navPlace.includes('Release') && dataRelease.map((rele) => (
             <article
               data-testid='card'
               key={ rele.id }

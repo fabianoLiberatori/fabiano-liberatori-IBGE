@@ -10,12 +10,12 @@ function Placeholder(param: any) {
     setNavPlace,
     dataIBGE,
     setNewsIBGE,
-    setDataRelease } = useContext<any>(NewsContext);
+    setDataRelease } = useContext(NewsContext);
 
   function navToggle(navClicked: string) {
-    const newsFilter = dataIBGE.filter((news: any) => news.tipo === 'Notícia');
-    const newsRelease = dataIBGE.filter((news: any) => news.tipo === 'Release');
-    const olderNews = newsFilter.filter((news: any) => news.id !== newsFilter[0].id);
+    const newsFilter = dataIBGE.filter((news) => news.tipo === 'Notícia');
+    const newsRelease = dataIBGE.filter((news) => news.tipo === 'Release');
+    const olderNews = newsFilter.filter((news) => news.id !== newsFilter[0].id);
     setInputFilter('');
     setNewsIBGE(olderNews);
     setDataRelease(newsRelease);

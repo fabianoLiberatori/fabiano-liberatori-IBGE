@@ -7,7 +7,7 @@ import NewsContext from '../context/NewsContext';
 import { PropNewsProp } from '../types';
 
 function NewsCard(oneNews: PropNewsProp) {
-  const { setAllFavorites } = useContext(NewsContext);
+  const { setAllFavorites } = useContext<any>(NewsContext);
   const { imagens, id, titulo, introducao, data_publicacao, link } = oneNews;
   const [isFavorite, setIsFavorite] = useState<string[]>([]);
 

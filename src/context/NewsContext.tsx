@@ -1,6 +1,5 @@
 import { createContext } from "react";
-import { NewsContextType } from "../types";
 
-const NewsContext = createContext({} as NewsContextType);
+const NewsContext = createContext({});
 
 export default NewsContext;

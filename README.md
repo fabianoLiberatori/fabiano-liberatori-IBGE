@@ -12,13 +12,13 @@ Eu, Fabiano Liberatóri, aluno da <a href="https://www.betrybe.com/">Trybe</a>, 
 
 - Utilizei React-Routers, Context e Provider para fazer somente uma vez a chamada do ENDPOINT do IBGE, com isto deixando a pagina mais responsiva em toda a sua navegação.
 
-- Paraa estilização a da pagina, segui boa parte do figma deste desafio, apenas em alguns pontos deixei ao meu gosto, principalmente a parte responsiva para mobile, optei por utilizar module.css para maior precisão de tamanhos e margens.
+- Para a estilização a da pagina, segui boa parte do figma deste desafio, apenas em alguns pontos deixei ao meu gosto, principalmente a parte responsiva para mobile, optei por utilizar module.css para maior precisão de tamanhos e margens.
 
 ## Desafios durante o desenvolvimento.
 
 Como se tratou de um projeto totalmente vindo do zero e sem ajuda da dos mentores, para justamente ter um desafio real de um Desenvolvedor, tive problemas com conversões de arquivos JSON e alinhamentos de estilização.
 
-Tive poucas vezes momentos em que estava com alguma dificuldade para desenvolver alguma logica para a pagina funcionasse conforme o que ja tinha planejado.
+Tive poucas vezes momentos em que estava com alguma dificuldade para desenvolver alguma logica para que a pagina funcionasse conforme o que ja tinha planejado.
 
 Passei por volta de 30% do tempo para codar, pesquisando em documentações, videos e projetos que desenvolvi anteriormente.
 

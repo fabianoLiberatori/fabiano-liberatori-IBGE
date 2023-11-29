@@ -5,6 +5,15 @@
   }
 }
 
+.noresponse{
+  display: flex;
+  margin-right: 45%;
+  margin-left: 45%;
+  margin-top: 6%;
+  width: 340px;
+  text-align: center;
+}
+
 .inputsearch {
   border-radius: 5px;
   display: flex;

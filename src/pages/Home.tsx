@@ -49,6 +49,8 @@ function Home() {
     setInputFilter(value);
   }
 
+if(dataIBGE.length === 0) return <h2 className={ styles.noresponse }>Carregando a responta dos dados do IBGE...</h2>
+
   return (
     <main className={ styles.mainresponse }>
       <LatestCard />

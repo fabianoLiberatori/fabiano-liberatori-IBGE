@@ -44,6 +44,7 @@ export type PropNewsProp = {
   introducao: string,
   data_publicacao: string,
   link: string,
+  isGroup: boolean,
 };
 
 export type imgParseType = {

@@ -3,7 +3,7 @@ import styles from './ReleaseCard.module.css';
 import { PropNewsProp } from '../types';
 
 function ReleaseCard(oneRelease: PropNewsProp) {
-  const { imagens, titulo, introducao, data_publicacao, link } = oneRelease;
+  const { imagens, titulo, introducao, data_publicacao, link, isGroup } = oneRelease;
 
   const strImg = JSON.parse(imagens);
 
@@ -25,7 +25,7 @@ function ReleaseCard(oneRelease: PropNewsProp) {
   const diasPassados = dataConvert();
 
   return (
-    <>
+    <article className={ isGroup ? styles.newsCard : styles.groupCard }>
       <img
         src={ `https://agenciadenoticias.ibge.gov.br/${strImg.image_fulltext}` }
         alt="Foto do artigo"
@@ -47,7 +47,7 @@ function ReleaseCard(oneRelease: PropNewsProp) {
         </Link>
       </div>
       <hr />
-    </>
+    </article>
   );
 }
 

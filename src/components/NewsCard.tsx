@@ -8,7 +8,7 @@ import { PropNewsProp } from '../types';
 
 function NewsCard(oneNews: PropNewsProp) {
   const { setAllFavorites } = useContext<any>(NewsContext);
-  const { imagens, id, titulo, introducao, data_publicacao, link } = oneNews;
+  const { imagens, id, titulo, introducao, data_publicacao, link, isGroup } = oneNews;
   const [isFavorite, setIsFavorite] = useState<string[]>([]);
 
   const strImg = JSON.parse(imagens);
@@ -68,16 +68,17 @@ function NewsCard(oneNews: PropNewsProp) {
   }
 
   return (
-    <>
-      <img
+    <article className={ isGroup ? styles.newsCard : styles.groupCard }>
+<img
         src={ `https://agenciadenoticias.ibge.gov.br/${strImg.image_fulltext}` }
         alt="Foto do artigo"
-        className={ styles.imgresponse }
+        className={ isGroup ? styles.imgresponse: styles.groupimg }
       />
-      <div className={ styles.titulo }>
+      <div className={ isGroup ? styles.carditens : styles.groupitens }>
+         <h3 className={ isGroup ?  styles.titulo : styles.grouptitulo }>
         { titulo }
-      </div>
-      <div className={ styles.introducao }>
+      </h3>
+      <div className={ isGroup ? styles.introducao : styles.groupintro }>
         { introducao }
       </div>
       <div className={ styles.divdata }>
@@ -103,8 +104,10 @@ function NewsCard(oneNews: PropNewsProp) {
           />
         </label>
       </div>
+      </div>
+     
 
-    </>
+    </article>
   );
 }
 

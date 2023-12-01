@@ -8,6 +8,25 @@
   }
 }
 
+.newsCard {
+  background: rgba(255, 255, 255, 1);
+  border-radius: 1%;
+  box-shadow: 0 2px 14px 0 #2a2a2a3d;
+  display: flex;
+  flex-direction: column;
+  height: 331px;
+  justify-content: space-between;
+  margin-bottom: 2%;
+  margin-top: 2%;
+  padding: 2%;
+  width: 438px;
+
+  @media ( max-width : 380px ) {
+    height: 600px;
+    width: 360px;
+  }
+}
+
 .titulo {
   background: rgba(255, 255, 255, 1);
 

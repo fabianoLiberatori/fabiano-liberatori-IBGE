@@ -17,6 +17,7 @@ function Home() {
     allFavorites,
     setDataRelease } = useContext<any>(NewsContext);
   const [inputFilter, setInputFilter] = useState<string>('');
+  const [isGroup, setIsGroup] = useState(true);
 
   useEffect(() => {
     if (JSON.parse(localStorage.getItem('favorite') || '[]') === null) {
@@ -49,6 +50,10 @@ function Home() {
     setInputFilter(value);
   }
 
+  function setGroup() {
+    setIsGroup(!isGroup);
+  }
+
 if(dataIBGE.length === 0) return <h2 className={ styles.noresponse }>Carregando a responta dos dados do IBGE...</h2>
 
   return (
@@ -56,6 +61,7 @@ if(dataIBGE.length === 0) return <h2 className={ styles.noresponse }>Carregando 
       <LatestCard />
       <Placeholder
         setInputFilter={ setInputFilter }
+        setGroup={ setGroup }
       />
 
       {
@@ -84,10 +90,9 @@ if(dataIBGE.length === 0) return <h2 className={ styles.noresponse }>Carregando 
 
         {
           navPlace.includes('Mais recentes') && newsIBGE.slice(0, 9).map((news: any) => (
-            <article
+            <section
               key={ news.id }
               data-testid='card'
-              className={ styles.newsCard }
             >
               <NewsCard
                 imagens={ news.imagens }
@@ -96,17 +101,17 @@ if(dataIBGE.length === 0) return <h2 className={ styles.noresponse }>Carregando 
                 introducao={ news.introducao }
                 data_publicacao={ news.data_publicacao }
                 link={ news.link }
+                isGroup={ isGroup }
               />
-            </article>
+            </section>
           ))
         }
 
         {
           navPlace.includes('Notícia') && newsIBGE.map((news: any) => (
-            <article
+            <section
               data-testid='card'
               key={ news.id }
-              className={ styles.newsCard }
             >
               <NewsCard
                 imagens={ news.imagens }
@@ -115,17 +120,17 @@ if(dataIBGE.length === 0) return <h2 className={ styles.noresponse }>Carregando 
                 introducao={ news.introducao }
                 data_publicacao={ news.data_publicacao }
                 link={ news.link }
+                isGroup={ isGroup }
               />
-            </article>
+            </section>
           ))
         }
 
         {
           navPlace.includes('Release') && dataRelease.map((rele: any) => (
-            <article
+            <section
               data-testid='card'
               key={ rele.id }
-              className={ styles.newsCard }
             >
               <ReleaseCard
                 id={ rele.id }
@@ -134,17 +139,17 @@ if(dataIBGE.length === 0) return <h2 className={ styles.noresponse }>Carregando 
                 introducao={ rele.introducao }
                 data_publicacao={ rele.data_publicacao }
                 link={ rele.link }
+                isGroup={ isGroup }
               />
-            </article>
+            </section>
           ))
         }
 
         {
           navPlace.includes('Favoritas') && allFavorites.map((news: any) => (
-            <article
+            <section
               data-testid='card'
               key={ news.id }
-              className={ styles.newsCard }
             >
               <NewsCard
                 imagens={ news.imagens }
@@ -153,8 +158,9 @@ if(dataIBGE.length === 0) return <h2 className={ styles.noresponse }>Carregando 
                 introducao={ news.introducao }
                 data_publicacao={ news.data_publicacao }
                 link={ news.link }
+                isGroup={ isGroup }
               />
-            </article>
+            </section>
           ))
         }
 

@@ -51,6 +51,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-top: 1%;
   margin-left: 12%;
   margin-right: 12%;
   width: 1400px;
@@ -63,23 +64,14 @@
   }
 }
 
-.newsCard {
-  background: rgba(255, 255, 255, 1);
-  border-radius: 1%;
-  box-shadow: 0 2px 14px 0 #2a2a2a3d;
-  display: flex;
-  flex-direction: column;
+.grouCard {
+  color: #c31815;
+  width: 1000px;
+  border: solid pink 1px;
   height: 331px;
-  justify-content: space-between;
-  margin-bottom: 2%;
-  margin-top: 2%;
-  padding: 2%;
-  width: 438px;
-
-  @media ( max-width : 380px ) {
-    height: 600px;
-    width: 360px;
-  }
+  display: flex;
+  box-shadow: 0 2px 14px 0 #2a2a2a3d;
+  border-radius: 1%;
 }
 
 .divlink {

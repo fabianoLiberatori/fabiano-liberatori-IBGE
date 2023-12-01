@@ -4,7 +4,7 @@ import styles from './Placeholder.module.css';
 import group from '../images/Group273.svg';
 
 function Placeholder(param: any) {
-  const { setInputFilter } = param;
+  const { setInputFilter, setGroup } = param;
   const {
     navPlace,
     setNavPlace,
@@ -71,6 +71,7 @@ function Placeholder(param: any) {
         src={ group }
         alt="agrupamento"
         className={ styles.navgroup }
+        onClick={ setGroup }
       />
     </section>
   );

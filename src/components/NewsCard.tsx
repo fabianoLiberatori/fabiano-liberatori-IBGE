@@ -69,44 +69,42 @@ function NewsCard(oneNews: PropNewsProp) {
 
   return (
     <article className={ isGroup ? styles.newsCard : styles.groupCard }>
-<img
+      <img
         src={ `https://agenciadenoticias.ibge.gov.br/${strImg.image_fulltext}` }
         alt="Foto do artigo"
         className={ isGroup ? styles.imgresponse: styles.groupimg }
       />
       <div className={ isGroup ? styles.carditens : styles.groupitens }>
          <h3 className={ isGroup ?  styles.titulo : styles.grouptitulo }>
-        { titulo }
-      </h3>
-      <div className={ isGroup ? styles.introducao : styles.groupintro }>
-        { introducao }
+           { titulo }
+         </h3>
+          <div className={ isGroup ? styles.introducao : styles.groupintro }>
+           { introducao }
+          </div>
+          <div className={ isGroup ? styles.divdata : styles.groupdivdata }>
+            <span className={ styles.diastext }>{ diasPassados }</span>
+            <Link to={ link } className={ styles.spanlink }>
+              <span className={ styles.spanlink }>Leia a notícia aqui</span>
+            </Link>
+          </div>
+          <hr className={ isGroup ? styles.hr : styles.grouphr }/>
+          <div className={ isGroup ? styles.checkFavorite : styles.groupfavorite }>
+           <label className={ styles.heartlabel }>
+             <input
+             hidden
+             checked={ isFavorite.includes(id) }
+              onChange={ setLocalFavorite }
+             type="checkbox"
+             />
+              <img
+               data-testid={`favorite${id}`}
+               className={ styles.heartlabel }
+               src={ isFavorite.includes(id) ? HeartRed : HeartBlack }
+               alt="favoritar"
+              />
+            </label>
+          </div>
       </div>
-      <div className={ styles.divdata }>
-        <span className={ styles.diastext }>{ diasPassados }</span>
-        <Link to={ link } className={ styles.spanlink }>
-          <span className={ styles.spanlink }>Leia a notícia aqui</span>
-        </Link>
-      </div>
-      <hr />
-      <div className={ styles.checkFavorite }>
-        <label className={ styles.heartlabel }>
-          <input
-            hidden
-            checked={ isFavorite.includes(id) }
-            onChange={ setLocalFavorite }
-            type="checkbox"
-          />
-          <img
-            data-testid={`favorite${id}`}
-            className={ styles.heartlabel }
-            src={ isFavorite.includes(id) ? HeartRed : HeartBlack }
-            alt="favoritar"
-          />
-        </label>
-      </div>
-      </div>
-     
-
     </article>
   );
 }

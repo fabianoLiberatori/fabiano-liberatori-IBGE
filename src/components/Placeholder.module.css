@@ -102,6 +102,13 @@
   margin-right: 2%;
 
   @media ( max-width : 380px ) {
-    width: 28px;
+    display: none;
   }
+}
+
+.navgroup:hover {
+  cursor: pointer;
+  transition: 0.35s;
+  margin-right: 3%;
+  width: 60px;
 }

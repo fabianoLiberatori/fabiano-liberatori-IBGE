@@ -4,11 +4,16 @@
   margin: 0;
   padding: 0;
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     width: 380px;
+    margin-left: 1%;
   }
 }
 
 main {
   width: 1920px;
+
+  @media ( max-width : 600px ) {
+    width: 380px;
+  }
 }

@@ -11,7 +11,7 @@
   padding: 2%;
   width: 438px;
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     height: 600px;
     width: 360px;
   }
@@ -26,7 +26,7 @@
   width: 1500px;
   box-shadow: 0 2px 14px 0 #2a2a2a3d;
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     display: flex;
     flex-direction: column;
     height: 600px;
@@ -37,7 +37,7 @@
 .imgresponse {
   display: none;
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     border-radius: 1%;
     display: block;
     width: 340px;
@@ -50,7 +50,7 @@
   border-radius: 1% 0 0 1%;
   box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     border-radius: 1%;
     display: block;
     width: 358px;
@@ -63,7 +63,7 @@
 .carditens {
   background: rgba(255, 255, 255, 1);
   margin: 4% 3%;
-  width: 400px;
+  width: 330px;
 }
 
 .groupitens {
@@ -76,7 +76,7 @@
   justify-content: space-around;
   align-items: center;
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     display: flex;
     flex-direction: column;
     height: 600px;
@@ -99,7 +99,7 @@
   width: 388px;
   text-align: center;
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     text-align: center;
     width: 330px;
   }
@@ -120,7 +120,7 @@
   line-height: 28px;
   text-align: center;
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     text-align: center;
     width: 330px;
     margin-left: 0;
@@ -152,7 +152,7 @@
   margin-bottom: 7%;
   text-align: center;
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     margin-top: 20%;
     margin-bottom: 16%;
     text-align: center;
@@ -173,7 +173,7 @@
   margin-bottom: 3%;
   text-align: center;
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     margin-top: 16%;
     margin-bottom: 11%;
     text-align: center;
@@ -197,8 +197,8 @@
   justify-content: space-between;
   margin-bottom: 3%;
 
-  @media ( max-width : 380px ) {
-    width: 335px;
+  @media ( max-width : 600px ) {
+    width: 330px;
   }
 }
 
@@ -208,7 +208,7 @@
   display: flex;
   justify-content: space-between;
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     width: 335px;
   }
 }
@@ -264,7 +264,7 @@
 .hr {
   margin-top: 3%;
   margin-bottom: 3%;
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     display: flex;
     width: 348px;
     margin-left: -11px;
@@ -284,7 +284,7 @@
   margin-bottom: 0;
   margin-right: 0;
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     width: 340px;
   }
 }
@@ -295,7 +295,7 @@
   display: flex;
   justify-content: end;
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     width: 340px;
   }
 }
@@ -303,7 +303,7 @@
 .heartlabel {
   background: rgba(255, 255, 255, 1);
 
-  @media ( max-width : 380px ) {
+  @media ( max-width : 600px ) {
     width: 17px;
     margin-left: -11px;
   }

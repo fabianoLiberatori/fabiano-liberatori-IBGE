@@ -3,9 +3,11 @@
 A proposta do projeto foi de personalizar uma pagina seguindo a estilização de um figma para consumir um ENDPOINT de noticias do IBGE. Fiz o fetch para manipular o JSON utilizando componentização do REACT, para maior aproximação do figma utilizei CSS module para estilização de toda pagina, isso tudo sem esquecer de utilizar testes do JEST / RTL / testing-library com cobertura de ao menos 80%.
 
 ## Para rodar o projeto localmente.
-- apos fazer o clone deste repositorio utilize <strong>`npm install`</strong> para instalar as dependencias.
+- Apos fazer o clone deste repositório utilize <strong>`npm install`</strong> para instalar as dependências.
   
-- utilize <strong>`npm run dev`</strong> para rodar o projeto localmente e abra no navegador utilizando `http://localhost:5173/`
+- Utilize <strong>`npm run dev`</strong> para rodar o projeto localmente e abra no navegador utilizando `http://localhost:5173/`
+
+- A pagina já esta no ar, para conferir basta clicar neste link: <a href="https://fabiano-liberatori-ibge-ladu.vercel.app"> IBGE News</a>
 
 ## O que utilizei para desenvolver.
 

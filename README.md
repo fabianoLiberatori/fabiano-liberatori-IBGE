@@ -1,8 +1,11 @@
 # Desafio React: transforme dados em notícias e acelere a sua carreira!
 
-Olá, este é o teste de Frontend para pessoas desenvolvedoras junior da Trybe. O objetivo é analisar as habilidades das pessoas candidatas, com foco nos fundamentos principais de React e suas bibliotecas relacionadas.
+A proposta do projeto foi de personalizar uma pagina seguindo a estilização de um figma para consumir um ENDPOINT de noticias do IBGE. Fiz o fetch para manipular o JSON utilizando componentização do REACT, para maior aproximação do figma utilizei CSS module para estilização de toda pagina, isso tudo sem esquecer de utilizar testes do JEST / RTL / testing-library com cobertura de ao menos 80%.
 
-Eu, Fabiano Liberatóri, aluno da <a href="https://www.betrybe.com/">Trybe</a>, apresento o que desenvolvi neste desafio. Para isso, repliquei a ideia de um sistema que captura as notícias mais recentes do IBGE e apresentar elas de forma organizada.
+## Para rodar o projeto localmente.
+- apos fazer o clone deste repositorio utilize <strong>`npm install`</strong> para instalar as dependencias.
+  
+- utilize <strong>`npm run dev`</strong> para rodar o projeto localmente e abra no navegador utilizando `http://localhost:5173/`
 
 ## O que utilizei para desenvolver.
 

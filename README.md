@@ -7,7 +7,7 @@ A proposta do projeto foi de personalizar uma pagina seguindo a estilização de
   
 - Utilize <strong>`npm run dev`</strong> para rodar o projeto localmente e abra no navegador utilizando `http://localhost:5173/`
 
-- A pagina já esta no ar, para conferir basta clicar neste link: <a href="https://fabiano-liberatori-ibge-ladu.vercel.app"> IBGE News</a>
+- A pagina já esta no ar, para conferir basta clicar neste link: <a href="https://fabiano-liberatori-ibge-ladu.vercel.app" target=”_blank”> IBGE News</a>
 
 ## O que utilizei para desenvolver.
 
